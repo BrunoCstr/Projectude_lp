@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* White Background */
+    --foreground: 240 10% 3.9%; /* Dark Text */
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    /* Primary: Projectude Teal -> Lighter Teal/Greenish for Light Mode */
+    --primary: 165 60% 55%; /* Lighter Teal/Greenish */
+    --primary-foreground: 210 40% 98%; /* Almost White text */
+
+    --secondary: 210 40% 96.1%; /* Very Light Gray */
+    --secondary-foreground: 240 5.9% 10%; /* Dark Gray Text */
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 240 3.8% 46.1%; /* Medium Gray Text */
+
+    /* Accent: Complementary color for CTAs */
+    --accent: 0 84.2% 60.2%; /* Coral/Reddish - FF6B6B -> HSL */
+    --accent-foreground: 0 0% 100%; /* White text on accent */
+
+    --destructive: 0 84.2% 60.2%; /* Default Red */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 40% 90%; /* Light Gray Border */
+    --input: 210 40% 90%;
+    --ring: 165 60% 55%; /* Use Primary for ring */
+
+    --chart-1: 165 60% 55%; /* Use primary shades for charts */
+    --chart-2: 165 55% 65%;
+    --chart-3: 165 50% 75%;
+    --chart-4: 165 45% 85%;
+    --chart-5: 165 40% 95%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 6% 10%; /* Dark Gray Background */
+    --foreground: 0 0% 98%; /* Light Text */
+
+    --card: 240 6% 12%; /* Slightly lighter dark gray for cards */
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 6% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Primary: Original Projectude Teal for Dark Mode */
+    --primary: 180 77% 44%; /* #14cdcd */
+    --primary-foreground: 180 20% 5%; /* Dark text on primary */
+
+    --secondary: 240 5% 18%; /* Darker Gray */
+    --secondary-foreground: 0 0% 98%; /* Light Gray Text */
+
+    --muted: 240 5% 18%;
+    --muted-foreground: 240 5% 64.9%; /* Lighter Gray Text */
+
+    /* Accent: Complementary color for CTAs */
+    --accent: 0 75% 65%; /* Slightly adjusted Coral for Dark Mode */
+    --accent-foreground: 0 0% 10%; /* Dark text on accent */
+
+    --destructive: 0 62.8% 40.6%; /* Darker Red */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5% 25%; /* Dark Gray Border */
+    --input: 240 5% 25%;
+    --ring: 180 77% 44%; /* Use Primary for ring */
+
+     --chart-1: 180 77% 44%; /* Use primary shades for charts */
+     --chart-2: 180 70% 50%;
+     --chart-3: 180 60% 55%;
+     --chart-4: 180 50% 60%;
+     --chart-5: 180 40% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
