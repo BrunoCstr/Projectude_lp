@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import { use } from 'react'
+import { use } from "react";
 import type { Metadata } from "next"; // Import type for Metadata
 import { Button } from "@/components/ui/button";
 import {
@@ -107,7 +107,7 @@ import {
 import { motion } from "framer-motion";
 
 interface HomePageProps {
-  params: Promise<{ locale: Locale }>
+  params: Promise<{ locale: Locale }>;
 }
 
 const fadeIn = {
@@ -121,12 +121,12 @@ const fadeIn = {
 
 export default function Home({ params }: HomePageProps) {
   // Directly use the locale from params as it's validated by the middleware
-  const { locale } = use(params)
+  const { locale } = use(params);
 
   // Get currency details based on the current locale
-  const currencyCode = localeDetailsMap[locale].currency
-  const currencyDetails = getCurrencyDetails(currencyCode)
-  const t = useTranslations('Pricing') // Initialize translations for Pricing section
+  const currencyCode = localeDetailsMap[locale].currency;
+  const currencyDetails = getCurrencyDetails(currencyCode);
+  const t = useTranslations("Pricing"); // Initialize translations for Pricing section
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
@@ -165,7 +165,7 @@ export default function Home({ params }: HomePageProps) {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          <PricingSection locale={locale} currencyDetails={currencyDetails}/>
+          <PricingSection locale={locale} currencyDetails={currencyDetails} />
         </motion.div>
 
         <motion.div
@@ -256,7 +256,7 @@ function HeroSection() {
           </div>
           {/* ProjectPreviewCard */}
           <div className="lg:order-last flex justify-center mt-8 lg:mt-0">
-            <ProjectPreviewCard />
+            <ProjectPreviewCard/>
           </div>
         </div>
       </div>
@@ -306,29 +306,42 @@ function FeaturesSection() {
         <div className="grid max-w-sm gap-6 sm:max-w-4xl sm:grid-cols-2 md:gap-8 lg:max-w-none lg:grid-cols-3 mx-auto">
           {" "}
           {/* Added mx-auto for centering on all screens */}
-          {features.map((feature) => (
-            <Card
-              key={feature.titleKey}
-              className="h-full transition-transform transform hover:-translate-y-2 hover:shadow-2xl border-border/60 flex flex-col bg-card p-4 sm:p-6"
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 50,
+                damping: 25,
+                delay: index * 0.2,
+              }}
+              viewport={{ once: true, amount: 0.3 }}
             >
-              <CardHeader className="flex flex-row items-center gap-3 md:gap-4 pb-3 md:pb-4 p-0">
-                <div className="bg-primary/10 p-2 md:p-3 rounded-lg">
-                  <feature.icon className="h-6 w-6 md:h-7 md:w-7 text-primary" />
-                </div>
-                <div className="flex-1 space-y-1">
-                  <CardTitle className="text-lg md:text-xl font-semibold">
-                    {t(feature.titleKey)}
-                  </CardTitle>{" "}
+              <Card
+                key={feature.titleKey}
+                className="h-full transition-transform transform hover:-translate-y-2 hover:shadow-2xl border-border/60 flex flex-col bg-card p-4 sm:p-6"
+              >
+                <CardHeader className="flex flex-row items-center gap-3 md:gap-4 pb-3 md:pb-4 p-0">
+                  <div className="bg-primary/10 p-2 md:p-3 rounded-lg">
+                    <feature.icon className="h-6 w-6 md:h-7 md:w-7 text-primary" />
+                  </div>
+                  <div className="flex-1 space-y-1">
+                    <CardTitle className="text-lg md:text-xl font-semibold">
+                      {t(feature.titleKey)}
+                    </CardTitle>{" "}
+                    {/* Use key */}
+                  </div>
+                </CardHeader>
+                <CardContent className="flex-1 pt-0 p-0">
+                  <p className="text-muted-foreground text-sm md:text-base">
+                    {t(feature.descriptionKey)}
+                  </p>{" "}
                   {/* Use key */}
-                </div>
-              </CardHeader>
-              <CardContent className="flex-1 pt-0 p-0">
-                <p className="text-muted-foreground text-sm md:text-base">
-                  {t(feature.descriptionKey)}
-                </p>{" "}
-                {/* Use key */}
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>
