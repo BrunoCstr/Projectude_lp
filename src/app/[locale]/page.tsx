@@ -1,26 +1,14 @@
 "use client";
 
 import { use } from "react";
-import type { Metadata } from "next"; // Import type for Metadata
 import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardFooter,
   CardHeader,
   CardTitle,
-  CardDescription,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Accordion,
@@ -34,16 +22,14 @@ import { ProjectCardPreview } from "@/components/project-card-preview";
 import { CommentsPreviewCard } from "@/components/comments-preview-card";
 import { TagsPreviewCard } from "@/components/tags-preview-card";
 import { HelpCenterPreviewCard } from "@/components/help-center-preview-card";
-import { ThemeToggle } from "@/components/theme-toggle";
 import Image from "next/image";
 import Link from "next/link";
 import * as React from "react"; // Import React
 import { Header } from "@/components/layout/header"; // Import Header
 import { Footer } from "@/components/layout/footer"; // Import Footer
-import type { Locale, Currency, CurrencyDetails } from "@/i18n-config"; // Use alias
+import type { Locale, CurrencyDetails } from "@/i18n-config"; // Use alias
 import {
   getCurrencyDetails,
-  getLocaleFromCountry,
   localeDetailsMap,
 } from "@/i18n-config"; // Use alias
 import { useTranslations } from "next-intl"; // Import translation hook

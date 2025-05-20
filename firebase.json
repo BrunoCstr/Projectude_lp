@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "site": "projectude-landing-page",
+    "public": "public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "function": "nextServer"
+      }
+    ]
+  }
+}
