@@ -13,7 +13,10 @@
     "login": "Log In",
     "signup": "Sign Up",
     "selectLanguage": "Select Language",
-    "language": "Language"
+    "language": "Language",
+    "dark": "Dark",
+    "light": "Light",
+    "system": "System"
   },
   "Hero": {
     "title": "Organize your projects the right way.",
@@ -21,6 +24,20 @@
     "subDescription": "Turn your ideas into reality! Projectude offers a modern platform for complete project management, team collaboration, and detailed information control.",
     "getStarted": "Get Started for Free",
     "subscribePremium": "Subscribe to Premium"
+  },
+  "Card": {
+    "example": "Example",
+    "title": "Example Project",
+    "description": "This is an example project",
+    "tagLabel": "Example Tag",
+    "tag": "Investment",
+    "date": "Start Date",
+    "investment": "Investment",
+    "localization": "Location",
+    "credentials": "Credentials",
+    "attachments": "Attachments",
+    "close": "Close",
+    "edit": "Edit"
   },
   "Features": {
     "mainFeatures": "Main Features",

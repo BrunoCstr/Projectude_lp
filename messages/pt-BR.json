@@ -13,7 +13,24 @@
     "login": "Entrar",
     "signup": "Criar Conta",
     "selectLanguage": "Selecionar Idioma",
-    "language": "Idioma"
+    "language": "Idioma",
+    "dark": "Escuro",
+    "light": "Claro",
+    "system": "Sistema"
+  },
+  "Card": {
+    "example": "Exemplo",
+    "title": "Projeto Exemplo",
+    "description": "Este é um exemplo de projeto",
+    "tagLabel": "Tag Exemplo",
+    "tag": "Investimento",
+    "date": "Data Início",
+    "investment": "Investimento",
+    "localization": "Localização",
+    "credentials": "Credenciais",
+    "attachments": "Anexos",
+    "close": "Fechar",
+    "edit": "Editar"
   },
   "Hero": {
     "title": "Organize seus projetos do jeito certo.",

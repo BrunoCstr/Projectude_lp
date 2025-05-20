@@ -13,43 +13,29 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { LogIn, UserRoundPlus, Globe, MenuIcon } from "lucide-react";
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-  SheetTitle,
-  SheetClose,
-} from "@/components/ui/sheet"; // Removed SheetHeader import
 import { useState } from "react"; // Import useState for mobile menu state
-import { motion } from "framer-motion";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { locales } from "@/i18n-config";
+import { useTranslations } from "next-intl";
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
+  const t = useTranslations("Header");
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 max-w-7xl items-center px-4 md:px-6">
         {/* Desktop & Mobile Logo */}
         <div className="mr-auto flex items-center md:mr-4">
-          <Link href="/" className="flex items-center gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-6 w-6 text-primary"
-            >
-              <path d="M12 2L2 7l10 5 10-5-10-5z" />
-              <path d="M2 17l10 5 10-5" />
-              <path d="M2 12l10 5 10-5" />
-            </svg>
-            <span className="font-bold hidden sm:inline">Projectude</span>
-          </Link>
+          <img
+            src="/logo_dark_mode.png"
+            width={150}
+            height={150}
+            alt="Logo teste"
+          />
         </div>
 
         {/* Desktop Navigation */}
@@ -58,31 +44,31 @@ export function Header() {
             href="#hero"
             className="text-foreground/60 transition-colors hover:text-foreground/80"
           >
-            Home
+            {t("home")}
           </Link>
           <Link
             href="#features"
             className="text-foreground/60 transition-colors hover:text-foreground/80"
           >
-            Sobre
+            {t("about")}
           </Link>
           <Link
             href="#functionalities"
             className="text-foreground/60 transition-colors hover:text-foreground/80"
           >
-            Funcionalidades
+            {t("features")}
           </Link>
           <Link
             href="#pricing"
             className="text-foreground/60 transition-colors hover:text-foreground/80"
           >
-            Planos
+            {t("pricing")}
           </Link>
           <Link
             href="#faq"
             className="text-foreground/60 transition-colors hover:text-foreground/80"
           >
-            FAQ
+            {t("faq")}
           </Link>
         </nav>
 
@@ -94,19 +80,19 @@ export function Header() {
               href="#hero"
               className="text-foreground/60 transition-colors hover:text-foreground/80"
             >
-              Home
+              {t("home")}
             </Link>
             <Link
               href="#pricing"
               className="text-foreground/60 transition-colors hover:text-foreground/80"
             >
-              Planos
+              {t("pricing")}
             </Link>
             <Link
               href="#functionalities"
               className="text-foreground/60 transition-colors hover:text-foreground/80"
             >
-              Func.
+              {t("features")}
             </Link>
           </nav>
 
@@ -122,7 +108,7 @@ export function Header() {
             >
               <LogIn className="h-5 w-5" />{" "}
               {/* Adjusted icon size for mobile */}
-              <span className="sr-only">Entrar</span>
+              <span className="sr-only">{t("login")}</span>
             </Button>
             <Button
               variant="outline"
@@ -134,7 +120,7 @@ export function Header() {
             >
               <UserRoundPlus className="h-5 w-5" />{" "}
               {/* Adjusted icon size for mobile */}
-              <span className="sr-only">Criar Conta</span>
+              <span className="sr-only">{t("signup")}</span>
             </Button>
             <LanguageSelector />
             <ThemeToggle />
@@ -150,8 +136,8 @@ export function Header() {
             onClick={() => window.open("https://app.projectude.com", "_blank")}
           >
             <LogIn className="h-4 w-4 md:mr-2" />
-            <span className="hidden md:inline">Entrar</span>
-            <span className="sr-only md:hidden">Entrar</span>
+            <span className="hidden md:inline">{t("login")}</span>
+            <span className="sr-only md:hidden">{t("login")}</span>
           </Button>
           <Button
             variant="outline"
@@ -160,8 +146,8 @@ export function Header() {
             onClick={() => window.open("https://app.projectude.com", "_blank")}
           >
             <UserRoundPlus className="h-4 w-4 md:mr-2" />
-            <span className="hidden md:inline">Criar Conta</span>
-            <span className="sr-only md:hidden">Criar Conta</span>
+            <span className="hidden md:inline">{t("signup")}</span>
+            <span className="sr-only md:hidden">{t("signup")}</span>
           </Button>
           <LanguageSelector />
           <ThemeToggle />
@@ -172,36 +158,64 @@ export function Header() {
 }
 
 function LanguageSelector() {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const t = useTranslations("Header");
+
+  const query = searchParams.toString();
+  const search = query ? `?${query}` : "";
+
+  function changeLocale(newLocale: string) {
+    // Remove o "/[locale]" atual do início da rota
+    const segments = pathname.split("/");
+    segments[1] = newLocale; // substitui o locale (índice 0 é “”, 1 é locale)
+    const newPath = segments.join("/");
+    router.push(newPath + search);
+  }
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
           variant="outline"
           size="icon"
-          className="hover:bg-secondary hover:text-secondary-foreground cursor-pointer transition-all duration-700"
+          className="hover:bg-secondary hover:text-secondary-foreground"
         >
-          {" "}
-          {/* Use size="icon" */}
-          <Globe className="h-[1.2rem] w-[1.2rem]" />{" "}
-          {/* Adjusted icon size to match ThemeToggle */}
-          <span className="sr-only">Selecionar Idioma</span>
+          <Globe className="h-5 w-5" />
+          <span className="sr-only">{t("selectLanguage")}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuLabel>Idioma</DropdownMenuLabel>
+        <DropdownMenuLabel>{t("language")}</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          <span className="mr-2 text-lg">🇧🇷</span> Português
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <span className="mr-2 text-lg">🇺🇸</span> English
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <span className="mr-2 text-lg">🇪🇸</span> Español
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <span className="mr-2 text-lg">🇫🇷</span> Français
-        </DropdownMenuItem>
+
+        {locales.map((loc) => {
+          const label = {
+            "pt-BR": "Português",
+            en: "English",
+            es: "Español",
+            fr: "Français",
+          }[loc];
+
+          const flag = {
+            "pt-BR": "🇧🇷",
+            en: "🇺🇸",
+            es: "🇪🇸",
+            fr: "🇫🇷",
+          }[loc];
+
+          return (
+            <DropdownMenuItem
+              key={loc}
+              onSelect={() => changeLocale(loc)}
+              className="flex items-center gap-2"
+            >
+              <span className="text-lg">{flag}</span>
+              {label}
+            </DropdownMenuItem>
+          );
+        })}
       </DropdownMenuContent>
     </DropdownMenu>
   );

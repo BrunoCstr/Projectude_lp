@@ -35,6 +35,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const randomImageUrls = Array.from(
   { length: 5 },
@@ -48,6 +49,8 @@ export function ProjectPreviewCard() {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
+  
+  const t = useTranslations("Card");
 
   React.useEffect(() => {
     if (!api) {
@@ -73,7 +76,7 @@ export function ProjectPreviewCard() {
           variant="secondary"
           className="absolute top-1.5 right-1.5 sm:top-2 sm:right-2 text-[9px] sm:text-xs font-medium bg-primary text-primary-foreground px-1.5 py-0.5 rounded-bl-lg rounded-tr-sm z-10"
         >
-          Exemplo
+          {t('example')}
         </Badge>
 
         <CardHeader className="p-0 relative">
@@ -108,10 +111,10 @@ export function ProjectPreviewCard() {
         </CardHeader>
         <CardContent className="p-3 sm:p-4 space-y-3 sm:space-y-4">
           <CardTitle className="text-base sm:text-lg md:text-xl font-bold">
-            Projeto Exemplo
+            {t('title')}
           </CardTitle>
           <CardDescription className="text-xs sm:text-sm text-muted-foreground">
-            Este é um exemplo de projeto
+            {t('description')}
           </CardDescription>
 
           <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
@@ -119,17 +122,17 @@ export function ProjectPreviewCard() {
               variant="secondary"
               className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5"
             >
-              Tag Exemplo
+              {t('tagLabel')}
             </Badge>
             <Badge
               variant="outline"
               className="border-primary/50 text-primary text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5"
             >
-              Investimento
+              {t('tag')}
             </Badge>
             <div className="ml-auto flex items-center gap-1 text-[10px] sm:text-xs text-muted-foreground">
               <CalendarDays className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
-              <span>Data Início 00/00/0000</span>
+              <span>{t('date')} 00/00/0000</span>
             </div>
           </div>
 
@@ -137,7 +140,7 @@ export function ProjectPreviewCard() {
             <div className="space-y-1">
               <h4 className="text-xs sm:text-sm font-medium flex items-center gap-1">
                 <DollarSign className="h-3.5 w-3.5 text-muted-foreground" />{" "}
-                Investimento
+                {t('investment')}
               </h4>
               <Skeleton className="h-3 sm:h-4 w-3/4" />
               <Skeleton className="h-3 sm:h-4 w-1/2" />
@@ -145,7 +148,7 @@ export function ProjectPreviewCard() {
             <div className="space-y-1">
               <h4 className="text-xs sm:text-sm font-medium flex items-center gap-1">
                 <MapPin className="h-3.5 w-3.5 text-muted-foreground" />{" "}
-                Localização
+                {t('localization')}
               </h4>
               <Skeleton className="h-3 sm:h-4 w-full" />
               <Skeleton className="h-3 sm:h-4 w-3/4" />
@@ -158,14 +161,14 @@ export function ProjectPreviewCard() {
             <div className="space-y-1">
               <h4 className="text-xs sm:text-sm font-medium flex items-center gap-1">
                 <LinkIcon className="h-3.5 w-3.5 text-muted-foreground" />{" "}
-                Credenciais
+                {t('credentials')}
               </h4>
               <Skeleton className="h-4 sm:h-5 w-full" />
             </div>
             <div className="space-y-1">
               <h4 className="text-xs sm:text-sm font-medium flex items-center gap-1">
                 <Paperclip className="h-3.5 w-3.5 text-muted-foreground" />{" "}
-                Anexos
+                {t('attachments')}
               </h4>
               <Skeleton className="h-4 sm:h-5 w-full" />
               <Skeleton className="h-4 sm:h-5 w-3/4 mt-0.5 sm:mt-1" />
@@ -220,13 +223,13 @@ export function ProjectPreviewCard() {
               size="sm"
               className="h-7 sm:h-8 px-2 sm:px-3 text-[10px] sm:text-xs"
             >
-              Fechar
+              {t('close')}
             </Button>
             <Button
               size="sm"
               className="h-7 sm:h-8 px-2 sm:px-3 text-[10px] sm:text-xs"
             >
-              <Pencil className="mr-1 h-3 w-3 sm:mr-1.5 sm:h-4 sm:w-4" /> Editar
+              <Pencil className="mr-1 h-3 w-3 sm:mr-1.5 sm:h-4 sm:w-4" /> {t('edit')}
             </Button>
           </div>
         </CardFooter>
