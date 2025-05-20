@@ -5,6 +5,10 @@
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
+        "source": "/favicon.ico",
+        "destination": "/favicon.ico"
+      },
+      {
         "source": "**",
         "function": "nextServer"
       }
