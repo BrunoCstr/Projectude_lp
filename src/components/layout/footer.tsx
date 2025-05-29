@@ -6,8 +6,12 @@ import { Separator } from "@/components/ui/separator";
 import {
     Globe, Facebook, Twitter, Linkedin, Instagram
 } from "lucide-react";
+import { LanguageSelector } from "../LanguageSelector";
+import { useTranslations } from "next-intl";
 
 export function Footer() {
+  const t = useTranslations('footer');
+
   return (
     <footer className="py-8 md:py-12 w-full bg-secondary/30 dark:bg-secondary/10 border-t border-border/50">
       <div className="container mx-auto max-w-7xl px-4 md:px-6">
@@ -31,7 +35,7 @@ export function Footer() {
               <span className="font-bold text-lg md:text-xl">Projectude</span>
             </Link>
             <p className="text-sm text-muted-foreground">
-              Gerenciamento moderno de projetos para equipes de todos os tamanhos.
+              {t('title')}
             </p>
             <div className="flex space-x-3 pt-2">
               <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Facebook">
@@ -51,56 +55,34 @@ export function Footer() {
 
            <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 md:col-span-3 md:grid-cols-3">
               <div>
-                <h4 className="text-sm font-semibold text-foreground mb-3">Navegação</h4>
+                <h4 className="text-sm font-semibold text-foreground mb-3">{t('headers.navigation')}</h4>
                 <nav className="flex flex-col space-y-2">
-                  <Link href="#hero" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Home</Link>
-                  <Link href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Sobre</Link>
-                  <Link href="#functionalities" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Funcionalidades</Link>
-                  <Link href="#pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Planos</Link>
-                  <Link href="#faq" className="text-sm text-muted-foreground hover:text-foreground transition-colors">FAQ</Link>
+                  <Link href="#hero" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t('links.home')}</Link>
+                  <Link href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t('links.Sobre')}</Link>
+                  <Link href="#functionalities" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t('links.functionalities')}</Link>
+                  <Link href="#pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t('links.plans')}</Link>
+                  <Link href="#faq" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t('links.FAQ')}</Link>
                 </nav>
               </div>
 
               <div>
-                <h4 className="text-sm font-semibold text-foreground mb-3">Legal</h4>
+                <h4 className="text-sm font-semibold text-foreground mb-3">{t('headers.legal')}</h4>
                 <nav className="flex flex-col space-y-2">
-                  <Link href="/termos-de-servico" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Termos de Serviço</Link>
-                  <Link href="/politica-de-privacidade" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Política de Privacidade</Link>
-                  <Link href="/politica-de-cookies" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Política de Cookies</Link>
+                  <Link href="/termos-de-servico" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t('links.terms-and-services')}</Link>
+                  <Link href="/politica-de-privacidade" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t('links.policy-and-privacy')}</Link>
+                  <Link href="/politica-de-cookies" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t('links.policy-of-cookies')}</Link>
                 </nav>
               </div>
 
               <div>
-                <h4 className="text-sm font-semibold text-foreground mb-3">Contato</h4>
+                <h4 className="text-sm font-semibold text-foreground mb-3">{t('headers.contato')}</h4>
                 <nav className="flex flex-col space-y-2">
                   <Link href="mailto:help@projectude.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">help@projectude.com</Link> {/* Updated email */}
-                   <Link href="/central-de-ajuda" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Central de Ajuda</Link> {/* Link to Help Center */}
+                   <Link href="/central-de-ajuda" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t('links.help-central')}</Link> {/* Link to Help Center */}
                 </nav>
                  <div className="mt-6">
-                     <h4 className="text-sm font-semibold text-foreground mb-3">Idioma</h4>
-                     <DropdownMenu>
-                         <DropdownMenuTrigger asChild>
-                           <Button variant="outline" size="sm" className="w-full max-w-[200px] justify-start gap-2 hover:bg-secondary hover:text-secondary-foreground text-xs">
-                             <Globe className="h-4 w-4" /> Selecionar Idioma
-                           </Button>
-                         </DropdownMenuTrigger>
-                         <DropdownMenuContent align="start">
-                            <DropdownMenuLabel>Idiomas</DropdownMenuLabel>
-                            <DropdownMenuSeparator />
-                           <DropdownMenuItem>
-                              <span className="mr-2 text-base">🇧🇷</span> Português
-                           </DropdownMenuItem>
-                           <DropdownMenuItem>
-                              <span className="mr-2 text-base">🇺🇸</span> English
-                           </DropdownMenuItem>
-                           <DropdownMenuItem>
-                             <span className="mr-2 text-base">🇪🇸</span> Español
-                           </DropdownMenuItem>
-                           <DropdownMenuItem>
-                             <span className="mr-2 text-base">🇫🇷</span> Français
-                           </DropdownMenuItem>
-                         </DropdownMenuContent>
-                       </DropdownMenu>
+                     <h4 className="text-sm font-semibold text-foreground mb-3">{t('headers.language')}</h4>
+                     <LanguageSelector/>
                  </div>
               </div>
            </div>
@@ -109,7 +91,7 @@ export function Footer() {
         <Separator className="my-6 md:my-8" />
 
         <div className="text-center text-xs md:text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} Projectude. Todos os direitos reservados.
+          &copy; {new Date().getFullYear()} Projectude. {t('headers.allDirectivesReserved')}
         </div>
       </div>
     </footer>

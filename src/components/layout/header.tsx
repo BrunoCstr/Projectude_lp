@@ -31,10 +31,20 @@ export function Header() {
         {/* Desktop & Mobile Logo */}
         <div className="mr-auto flex items-center md:mr-4">
           <img
+            src="/projectude_logo.png"
+            alt="Logo Mobile"
+            width={50}
+            height={50}
+            className="block md:hidden pl-5"
+          />
+
+          {/* Logo para desktop */}
+          <img
             src="/logo_dark_mode.png"
+            alt="Logo Desktop"
             width={150}
             height={150}
-            alt="Logo teste"
+            className="hidden md:block"
           />
         </div>
 

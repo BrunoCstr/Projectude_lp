@@ -398,6 +398,7 @@ function FunctionalitiesSection() {
                 <Button
                   variant="link"
                   className="self-start px-0 text-primary hover:text-primary/80 mt-2"
+                  onClick={() => {window.open("https://app.projectude.com", "_blank")}}
                 >
                   {t("learnMore")} <ArrowRight className="ml-1 h-4 w-4" />
                 </Button>
