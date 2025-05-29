@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "projectude-landing-page",
+    "public": "public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "/favicon.ico",
+        "destination": "/favicon.ico"
+      },
+      {
+        "source": "**",
+        "function": "nextServer"
+      }
+    ]
+  }
+}

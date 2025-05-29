@@ -1,7 +1,6 @@
 // src/app/central-de-ajuda/page.tsx
 'use client'; // Mark as Client Component for state and event handling
 
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import * as React from 'react'; // Import React and necessary hooks
 import { useState, useEffect } from 'react';
@@ -23,18 +22,14 @@ import {
     Filter,
     Mail,
     Globe,
-    ChevronDown,
     UserPlus, // Import UserPlus icon
-    Settings,
-    FolderKanban,
-    Tags,
     UserCircle,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'; // Added CardFooter
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'; // Added CardFooter
 import { Header } from '@/components/layout/header'; // Assuming Header is extracted
 import { Footer } from '@/components/layout/footer'; // Assuming Footer is extracted
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'; // Import Dialog components

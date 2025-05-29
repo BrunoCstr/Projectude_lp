@@ -38,3 +38,10 @@ yarn-error.log*
 next-env.d.ts
 
 .genkit/*
+
+node_modules/
+.firebase/
+.next/
+public/_next/
+functions/node_modules/
+functions/.next/

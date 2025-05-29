@@ -184,5 +184,220 @@
     "language": "Langue",
     "selectLanguage": "Sélectionner la langue",
     "copyright": "© {year} Projectude. Tous droits réservés."
+  },
+  "footer": {
+    "title": "Gestion de projet moderne pour les équipes de toutes tailles.",
+    "headers": {
+      "navigation": "Navigation",
+      "legal": "Mentions légales",
+      "contato": "Contact",
+      "language": "Langue",
+      "allDirectivesReserved": "Tous droits réservés"
+    },
+    "links": {
+      "home": "Accueil",
+      "Sobre": "À propos",
+      "functionalities": "Fonctionnalités",
+      "plans": "Plans",
+      "FAQ": "FAQ",
+      "terms-and-services": "Conditions d'utilisation",
+      "policy-and-privacy": "Politique de confidentialité",
+      "policy-of-cookies": "Politique de cookies",
+      "help-central": "Centre d'aide"
+    }
+  },
+  "terms": {
+    "backToHome": "Retour à l'accueil",
+    "title": "Conditions d'utilisation de la plateforme Projectude",
+    "lastUpdate": "Dernière mise à jour : 30 avril 2025",
+    "intro": "Bienvenue sur Projectude ! En accédant à notre plateforme (www.projectude.com) ou en l'utilisant, vous acceptez les présentes Conditions d'utilisation (« Conditions »), qui régissent l'utilisation du système de gestion de projet proposé par Projectude. Veuillez les lire attentivement.",
+
+    "sections": {
+      "1": {
+        "title": "1. Définitions",
+        "items": {
+          "user": "Utilisateur : Toute personne physique ou morale créant un compte sur Projectude.",
+          "project": "Projet : Ensemble d'informations enregistrées dans le système, créées ou partagées par des utilisateurs.",
+          "collaborator": "Collaborateur : Utilisateur invité à contribuer à un ou plusieurs projets.",
+          "service": "Service : Fonctionnalités fournies par la plateforme telles que tableaux de bord, commentaires, filtres, etc."
+        }
+      },
+      "2": {
+        "title": "2. Utilisation de la Plateforme",
+        "intro": "Projectude offre un environnement moderne et réactif pour la gestion de projets avec les fonctionnalités suivantes :",
+        "features": {
+          "item1": "Création, édition et partage de projets.",
+          "item2": "Invitation et gestion des collaborateurs.",
+          "item3": "Commentaires attribués avec statut et réponses.",
+          "item4": "Application de tags, filtres et graphiques de performance.",
+          "item5": "Mode sombre/clair, centre d'aide et notifications."
+        },
+        "warning": "Toute utilisation abusive de la plateforme (spam, données frauduleuses, activités compromettant la sécurité ou la stabilité du service) entraînera la suspension ou la suppression du compte."
+      },
+      "3": {
+        "title": "3. Compte Utilisateur",
+        "text": "En s'inscrivant, l'utilisateur s'engage à fournir des informations exactes et à jour. Le compte est personnel et intransmissible. Il est de la responsabilité de l'utilisateur de garder ses identifiants confidentiels."
+      },
+      "4": {
+        "title": "4. Abonnements et Paiements",
+        "text1": "Projectude peut proposer des abonnements gratuits et payants, dont les prix, les fonctionnalités et les limitations seront clairement indiqués dans 'Paramètres > Abonnements'.",
+        "text2": "Les paiements sont traités par carte bancaire, avec un historique accessible à l'utilisateur.",
+        "text3": "Le non-paiement peut entraîner une restriction des fonctionnalités du compte."
+      },
+      "5": {
+        "title": "5. Partage et Collaboration",
+        "text": "Les utilisateurs peuvent partager des projets avec d'autres membres via les fonctions 'Partagés avec moi' et 'Collaborateurs'. Chaque collaborateur peut avoir des autorisations différentes définies par le créateur du projet."
+      },
+      "6": {
+        "title": "6. Commentaires et Archivage",
+        "text": "Tous les commentaires dans les projets doivent être respectueux et objectifs. Projectude n'est pas responsable des opinions ou contenus générés par les utilisateurs, mais se réserve le droit d'intervenir en cas de non-respect des règles."
+      },
+      "7": {
+        "title": "7. Vie Privée et Protection des Données",
+        "text": "Projectude respecte la vie privée de ses utilisateurs. Les données, projets et interactions sont traités conformément à notre Politique de Confidentialité et à la LGPD."
+      },
+      "8": {
+        "title": "8. Limitations de Responsabilité",
+        "text": "Projectude ne peut être tenu responsable des pertes, interruptions de service, perte de données ou mauvaise utilisation du système. Bien que nous appliquions les meilleures pratiques de sécurité, nous ne garantissons pas un fonctionnement ininterrompu ou sans erreur."
+      },
+      "9": {
+        "title": "9. Modifications des Conditions",
+        "text": "Nous nous réservons le droit de modifier les présentes Conditions à tout moment sans préavis. L'utilisation continue de la plateforme vaut acceptation des nouvelles conditions."
+      },
+      "10": {
+        "title": "10. Support et Contact",
+        "intro": "Des questions ou des problèmes avec la plateforme ? Notre équipe est là pour vous aider :",
+        "email": "Email de support : help@projectude.com",
+        "website": "Site officiel : www.projectude.com"
+      },
+      "acceptance": "En utilisant Projectude, vous acceptez pleinement ces Conditions d'utilisation."
+    }
+  },
+  "privacy-police": {
+    "backToHome": "Retour à l'accueil",
+    "title": "Politique de Confidentialité de la Plateforme Projectude",
+    "lastUpdate": "Dernière mise à jour : 30 avril 2025",
+    "intro": "Votre vie privée est importante pour nous. Cette politique de confidentialité décrit comment nous collectons, utilisons, stockons et protégeons vos données personnelles lorsque vous utilisez la plateforme Projectude, accessible sur www.projectude.com.",
+
+    "section1Title": "1. Informations que nous collectons",
+    "section1Intro": "En utilisant Projectude, nous pouvons collecter les données suivantes :",
+
+    "section1_1Title": "1.1. Données d'inscription",
+    "section1_1Item1": "Nom",
+    "section1_1Item2": "Adresse e-mail",
+    "section1_1Item3": "Mot de passe (crypté)",
+    "section1_1Item4": "Photo de profil",
+    "section1_1Item5": "Informations professionnelles et biographiques (optionnel)",
+    "section1_1Item6": "Informations de paiement (carte de crédit)",
+
+    "section1_2Title": "1.2. Données d'utilisation",
+    "section1_2Item1": "Actions réalisées sur la plateforme (ex. : création de projets, commentaires, invitations)",
+    "section1_2Item2": "Adresse IP, type de navigateur et appareil",
+    "section1_2Item3": "Date et heure d'accès",
+    "section1_2Item4": "Préférence de langue et mode d'affichage (clair/sombre)",
+
+    "section1_3Title": "1.3. Données partagées",
+    "section1_3Item1": "Projets et identifiants saisis par les utilisateurs",
+    "section1_3Item2": "Fichiers joints (maximum 3 par projet)",
+    "section1_3Item3": "Collaborateurs ajoutés aux projets",
+
+    "section2Title": "2. Finalité de l'utilisation des données",
+    "section2Intro": "Nous utilisons vos données pour :",
+    "section2Item1": "Permettre le bon fonctionnement de la plateforme",
+    "section2Item2": "Faciliter la collaboration entre les utilisateurs",
+    "section2Item3": "Envoyer des notifications et des mises à jour",
+    "section2Item4": "Traiter les paiements des plans",
+    "section2Item5": "Fournir une assistance technique",
+    "section2Item6": "Améliorer l'expérience utilisateur (analyses internes)",
+
+    "section3Title": "3. Partage des données",
+    "section3Intro": "Vos données ne sont pas vendues à des tiers. Nous pouvons partager des informations :",
+    "section3Item1": "Avec des prestataires de services de paiement (ex. : passerelles de carte de crédit)",
+    "section3Item2": "Pour respecter les obligations légales, judiciaires ou réglementaires",
+    "section3Item3": "Avec les collaborateurs autorisés sur les projets auxquels vous participez",
+
+    "section4Title": "4. Stockage et sécurité",
+    "section4Intro": "Nous adoptons des mesures techniques et organisationnelles pour protéger vos données contre tout accès non autorisé, usage abusif, altération ou destruction.",
+    "section4Item1": "Stockage sur des serveurs sécurisés",
+    "section4Item2": "Cryptage des mots de passe",
+    "section4Item3": "Accès contrôlé aux données par l'équipe technique",
+
+    "section5Title": "5. Conservation des données",
+    "section5Text": "Vos données seront conservées tant que votre compte sera actif ou tant qu'elles seront nécessaires aux finalités décrites. Vous pouvez demander la suppression de votre compte et de vos données à tout moment.",
+
+    "section6Title": "6. Vos droits",
+    "section6Intro": "Vous avez le droit de :",
+    "section6Item1": "Accéder aux données que nous détenons sur vous",
+    "section6Item2": "Corriger les données inexactes ou obsolètes",
+    "section6Item3": "Demander la suppression de vos données",
+    "section6Item4": "Retirer votre consentement, lorsque cela est applicable",
+    "section6Note": "Les demandes doivent être envoyées par e-mail : help@projectude.com",
+
+    "section7Title": "7. Cookies",
+    "section7Intro": "Nous utilisons des cookies et des technologies similaires pour :",
+    "section7Item1": "Mémoriser vos préférences",
+    "section7Item2": "Améliorer la navigation",
+    "section7Item3": "Réaliser des analyses d'utilisation",
+    "section7Note": "Vous pouvez contrôler l'utilisation des cookies dans les paramètres de votre navigateur.",
+
+    "section8Title": "8. Modifications de cette politique",
+    "section8Text": "Cette politique peut être mise à jour périodiquement sans préavis. Nous vous recommandons de consulter régulièrement cette page.",
+
+    "section9Title": "9. Contact",
+    "section9Intro": "En cas de questions concernant cette politique de confidentialité, veuillez nous contacter :",
+    "section9Email": "E-mail : help@projectude.com",
+    "section9Site": "Site web : www.projectude.com",
+
+    "conclusion": "En utilisant Projectude, vous acceptez cette politique de confidentialité."
+  },
+  "cookie-policy": {
+    "backToHome": "Retour à l'accueil",
+    "title": "Politique de Cookies de Projectude",
+    "lastUpdate": "Dernière mise à jour : 30 avril 2025",
+    "intro": "Cette Politique de Cookies explique comment la plateforme Projectude utilise des cookies et des technologies similaires pour vous reconnaître lorsque vous visitez notre site (www.projectude.com). Elle détaille ce que sont les cookies, pourquoi nous les utilisons et comment vous pouvez les contrôler.",
+
+    "section1Title": "1. Que sont les cookies ?",
+    "section1Text": "Les cookies sont de petits fichiers texte stockés dans votre navigateur ou appareil lorsque vous visitez un site web. Ils servent à reconnaître vos préférences, améliorer votre expérience de navigation et recueillir des informations analytiques.",
+
+    "section2Title": "2. Types de cookies que nous utilisons",
+
+    "strictlyNecessaryTitle": "Cookies strictement nécessaires",
+    "strictlyNecessaryText": "Ces cookies sont essentiels au fonctionnement de la plateforme et ne peuvent pas être désactivés. Ils sont utilisés, par exemple, pour :",
+    "strictlyNecessaryItem1": "Vous maintenir connecté à votre compte",
+    "strictlyNecessaryItem2": "Gérer des sessions sécurisées",
+    "strictlyNecessaryItem3": "Enregistrer les préférences de langue ou de thème (clair/sombre)",
+
+    "performanceTitle": "Cookies de performance et d’analyse",
+    "performanceText": "Ils nous aident à comprendre comment les utilisateurs interagissent avec Projectude, en permettant de :",
+    "performanceItem1": "Mesurer le nombre d'accès et le comportement de navigation",
+    "performanceItem2": "Améliorer les performances et l’ergonomie de l’interface",
+    "performanceExample": "Exemple : nous utilisons des outils comme Google Analytics avec anonymisation de l'adresse IP.",
+
+    "functionalityTitle": "Cookies de fonctionnalité",
+    "functionalityText": "Ils permettent à la plateforme de mémoriser vos choix pour personnaliser votre expérience, comme :",
+    "functionalityItem1": "Mode sombre activé",
+    "functionalityItem2": "Filtres enregistrés dans les listes de projets",
+    "functionalityItem3": "Préférences d'affichage sur le tableau de bord",
+
+    "marketingTitle": "Cookies marketing (optionnels)",
+    "marketingText": "Nous pouvons utiliser des cookies pour :",
+    "marketingItem1": "Afficher des communications personnalisées sur les mises à jour ou les plans",
+    "marketingItem2": "Mesurer les interactions avec les campagnes promotionnelles (avec votre consentement)",
+
+    "section3Title": "3. Gestion des cookies",
+    "section3Text": "Vous pouvez contrôler et/ou supprimer les cookies à tout moment. Pour ce faire :",
+    "section3Item1": "Paramètres du navigateur : ajustez les autorisations des cookies, bloquez ou supprimez les cookies enregistrés.",
+
+    "section4Title": "4. Cookies tiers",
+    "section4Text": "Nous pouvons utiliser des cookies de services tiers (par exemple : Stripe, Firebase, Google) pour l'authentification, les paiements ou l’analyse. Ces cookies sont soumis aux politiques de confidentialité respectives de ces fournisseurs.",
+
+    "section5Title": "5. Modifications de cette politique",
+    "section5Text": "Cette Politique de Cookies peut être mise à jour périodiquement pour refléter les modifications législatives ou de la plateforme. La version mise à jour sera toujours publiée à l’adresse suivante :",
+
+    "section6Title": "6. Contact",
+    "section6Text": "Si vous avez des questions ou des demandes concernant l’utilisation des cookies, veuillez contacter notre équipe :",
+    "contactEmail": "E-mail : help@projectude.com",
+
+    "finalNote": "En continuant à utiliser Projectude après avoir vu l’avis relatif aux cookies, vous acceptez l’utilisation telle que décrite dans cette politique."
   }
 }
