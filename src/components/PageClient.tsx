@@ -50,6 +50,7 @@ import {
   BarChart,
 } from "lucide-react";
 
+
 interface HomeClientProps {
   locale: Locale;
   currencyDetails: CurrencyDetails;
@@ -94,6 +95,7 @@ export default function HomeClient({
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
+          className="functionalities-section"
         >
           <FunctionalitiesSection />
         </motion.div>

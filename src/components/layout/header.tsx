@@ -35,7 +35,7 @@ export function Header() {
             alt="Logo Mobile"
             width={50}
             height={50}
-            className="block md:hidden pl-5"
+            className="block md:hidden pl-2 pr-2 min-w-[45px]"
           />
 
           {/* Logo para desktop */}
@@ -133,7 +133,6 @@ export function Header() {
               <span className="sr-only">{t("signup")}</span>
             </Button>
             <LanguageSelector />
-            <ThemeToggle />
           </div>
         </div>
 
@@ -160,7 +159,6 @@ export function Header() {
             <span className="sr-only md:hidden">{t("signup")}</span>
           </Button>
           <LanguageSelector />
-          <ThemeToggle />
         </div>
       </div>
     </header>

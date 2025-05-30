@@ -1,27 +1,14 @@
 // app/[locale]/page.tsx
-import type { Locale, CurrencyDetails } from "@/i18n-config";
-import {
-  defaultLocale,
-  getCurrencyDetails,
-  localeDetailsMap,
-} from "@/i18n-config";
-import HomeClient from "../../components/PageClient";
+
+import type { Locale } from "@/i18n-config";
+import HomeClientWrapper from "@/components/HomeClientWrapper"; // novo client wrapper
 
 interface PageProps {
-  params: Promise<{ locale: Locale }>;
+  params: { locale: Locale };
 }
 
-export default async function Page({ params }: PageProps) {
-  // Aguarda os params antes de usar
-  const { locale } = await params;
+export default function Page({ params }: PageProps) {
+  const locale = params.locale;
 
-  // Lógica de servidor: preparação dos dados
-  const localeDetail =
-    localeDetailsMap[locale] ?? localeDetailsMap[defaultLocale];
-  const currencyDetails: CurrencyDetails = getCurrencyDetails(
-    localeDetail.currency
-  );
-
-  // Retorna o Client Component com props prontas
-  return <HomeClient locale={locale} currencyDetails={currencyDetails} />;
+  return <HomeClientWrapper locale={locale} />;
 }

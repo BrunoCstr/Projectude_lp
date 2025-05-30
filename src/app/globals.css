@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.functionalities-section {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%; /* White Background */
