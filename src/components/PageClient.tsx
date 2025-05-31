@@ -181,6 +181,7 @@ function HeroSection() {
               <Button
                 size="lg"
                 className="bg-primary text-primary-foreground hover:bg-primary/90 w-full sm:w-auto"
+                onClick={() => {window.open("https://app.projectude.com", "_blank")}}
               >
                 <Briefcase className="mr-2 h-5 w-5" />
                 {t("subscribePremium")}
@@ -189,6 +190,7 @@ function HeroSection() {
                 size="lg"
                 variant="outline"
                 className="hover:bg-secondary hover:text-secondary-foreground w-full sm:w-auto border-border"
+                onClick={() => {window.open("https://app.projectude.com", "_blank")}}
               >
                 <UserRoundPlus className="mr-2 h-5 w-5" />
                 {t("getStarted")}
