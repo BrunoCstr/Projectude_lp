@@ -29,14 +29,18 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between py-3 md:py-4 font-medium transition-all hover:underline [&[data-state=open]>svg.accordion-icon]:rotate-180", // Adjusted padding
+        "flex flex-1 items-center justify-between py-3 md:py-4 font-medium hover:underline", // Removido transition-all e rotação
         className
       )}
+      // Desabilita a abertura do Accordion
+      onClick={e => e.preventDefault()}
+      tabIndex={-1} // impede foco
+      aria-expanded={false}
       {...props}
     >
       {children}
-      {/* Keep ChevronDown icon as the default indicator */}
-      <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200 accordion-icon" />
+      {/* ChevronDown sem animação */}
+      <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ))
@@ -48,10 +52,10 @@ const AccordionContent = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
-    className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    className="hidden" // Nunca mostra o conteúdo
     {...props}
   >
-    <div className={cn("pb-3 md:pb-4 pt-0", className)}>{children}</div> {/* Adjusted padding */}
+    <div className={cn("pb-3 md:pb-4 pt-0", className)}>{children}</div>
   </AccordionPrimitive.Content>
 ))
 

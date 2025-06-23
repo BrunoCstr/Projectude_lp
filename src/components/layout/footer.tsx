@@ -1,3 +1,4 @@
+"use client";
 // src/components/layout/footer.tsx
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -6,32 +7,44 @@ import { Separator } from "@/components/ui/separator";
 import {
     Globe, Facebook, Twitter, Linkedin, Instagram
 } from "lucide-react";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { locales } from "@/i18n-config";
 
 export function Footer() {
+  const t = useTranslations("Footer");
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const query = searchParams.toString();
+  const search = query ? `?${query}` : "";
+
+  function changeLocale(newLocale: string) {
+    const segments = pathname.split("/");
+    segments[1] = newLocale;
+    const newPath = segments.join("/");
+    router.push(newPath + search);
+  }
+
   return (
     <footer className="py-8 md:py-12 w-full bg-secondary/30 dark:bg-secondary/10 border-t border-border/50">
       <div className="container mx-auto max-w-7xl px-4 md:px-6">
         <div className="flex flex-col md:grid md:grid-cols-4 gap-8 text-left">
           <div className="space-y-4 md:col-span-1">
             <Link href="/" className="flex items-center gap-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-6 w-6 md:h-7 md:w-7 text-primary"
-              >
-                <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                <path d="M2 17l10 5 10-5" />
-                <path d="M2 12l10 5 10-5" />
-              </svg>
+              <Image
+                src="/logo_projectude.png"
+                alt="Projectude Logo"
+                width={28}
+                height={28}
+                className="h-6 w-6 md:h-7 md:w-7"
+              />
               <span className="font-bold text-lg md:text-xl">Projectude</span>
             </Link>
             <p className="text-sm text-muted-foreground">
-              Gerenciamento moderno de projetos para equipes de todos os tamanhos.
+              {t("tagline")}
             </p>
             <div className="flex space-x-3 pt-2">
               <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Facebook">
@@ -51,54 +64,68 @@ export function Footer() {
 
            <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 md:col-span-3 md:grid-cols-3">
               <div>
-                <h4 className="text-sm font-semibold text-foreground mb-3">Navegação</h4>
+                <h4 className="text-sm font-semibold text-foreground mb-3">{t("navigation")}</h4>
                 <nav className="flex flex-col space-y-2">
-                  <Link href="#hero" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Home</Link>
-                  <Link href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Sobre</Link>
-                  <Link href="#functionalities" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Funcionalidades</Link>
-                  <Link href="#pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Planos</Link>
-                  <Link href="#faq" className="text-sm text-muted-foreground hover:text-foreground transition-colors">FAQ</Link>
+                  <Link href="#hero" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t("home")}</Link>
+                  <Link href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t("about")}</Link>
+                  <Link href="#functionalities" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t("features")}</Link>
+                  <Link href="#pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t("pricing")}</Link>
+                  <Link href="#faq" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t("faq")}</Link>
                 </nav>
               </div>
 
               <div>
-                <h4 className="text-sm font-semibold text-foreground mb-3">Legal</h4>
+                <h4 className="text-sm font-semibold text-foreground mb-3">{t("legal")}</h4>
                 <nav className="flex flex-col space-y-2">
-                  <Link href="/termos-de-servico" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Termos de Serviço</Link>
-                  <Link href="/politica-de-privacidade" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Política de Privacidade</Link>
-                  <Link href="/politica-de-cookies" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Política de Cookies</Link>
+                  <Link href="/termos-de-servico" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t("terms")}</Link>
+                  <Link href="/politica-de-privacidade" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t("privacy")}</Link>
+                  <Link href="/politica-de-cookies" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t("cookies")}</Link>
                 </nav>
               </div>
 
               <div>
-                <h4 className="text-sm font-semibold text-foreground mb-3">Contato</h4>
+                <h4 className="text-sm font-semibold text-foreground mb-3">{t("contact")}</h4>
                 <nav className="flex flex-col space-y-2">
-                  <Link href="mailto:help@projectude.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">help@projectude.com</Link> {/* Updated email */}
-                   <Link href="/central-de-ajuda" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Central de Ajuda</Link> {/* Link to Help Center */}
+                  <Link href="mailto:help@projectude.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t("email")}</Link>
+                   <Link href="/central-de-ajuda" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t("helpCenterLink")}</Link>
                 </nav>
                  <div className="mt-6">
-                     <h4 className="text-sm font-semibold text-foreground mb-3">Idioma</h4>
+                     <h4 className="text-sm font-semibold text-foreground mb-3">{t("language")}</h4>
                      <DropdownMenu>
                          <DropdownMenuTrigger asChild>
                            <Button variant="outline" size="sm" className="w-full max-w-[200px] justify-start gap-2 hover:bg-secondary hover:text-secondary-foreground text-xs">
-                             <Globe className="h-4 w-4" /> Selecionar Idioma
+                             <Globe className="h-4 w-4" /> {t("selectLanguage")}
                            </Button>
                          </DropdownMenuTrigger>
                          <DropdownMenuContent align="start">
-                            <DropdownMenuLabel>Idiomas</DropdownMenuLabel>
+                            <DropdownMenuLabel>{t("language")}</DropdownMenuLabel>
                             <DropdownMenuSeparator />
-                           <DropdownMenuItem>
-                              <span className="mr-2 text-base">🇧🇷</span> Português
-                           </DropdownMenuItem>
-                           <DropdownMenuItem>
-                              <span className="mr-2 text-base">🇺🇸</span> English
-                           </DropdownMenuItem>
-                           <DropdownMenuItem>
-                             <span className="mr-2 text-base">🇪🇸</span> Español
-                           </DropdownMenuItem>
-                           <DropdownMenuItem>
-                             <span className="mr-2 text-base">🇫🇷</span> Français
-                           </DropdownMenuItem>
+                           {locales.map((loc) => {
+                             const label = {
+                               "pt-BR": "Português",
+                               en: "English",
+                               es: "Español",
+                               fr: "Français",
+                             }[loc];
+
+                             const flag = {
+                               "pt-BR": "🇧🇷",
+                               en: "🇺🇸",
+                               es: "🇪🇸",
+                               fr: "🇫🇷",
+                             }[loc];
+
+                             return (
+                               <DropdownMenuItem
+                                 key={loc}
+                                 onSelect={() => changeLocale(loc)}
+                                 className="flex items-center gap-2"
+                               >
+                                 <span className="text-lg">{flag}</span>
+                                 {label}
+                               </DropdownMenuItem>
+                             );
+                           })}
                          </DropdownMenuContent>
                        </DropdownMenu>
                  </div>
@@ -109,7 +136,7 @@ export function Footer() {
         <Separator className="my-6 md:my-8" />
 
         <div className="text-center text-xs md:text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} Projectude. Todos os direitos reservados.
+          {t("copyright", { year: new Date().getFullYear() })}
         </div>
       </div>
     </footer>

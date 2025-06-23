@@ -8,10 +8,6 @@ import { MessageSquare, Inbox, Clock, CheckCircle, MoreHorizontal, Reply, User, 
 export function CommentsPreviewCard() {
   return (
     <Card className="w-full max-w-2xl mx-auto p-3 md:p-4 bg-card/50 dark:bg-secondary/20 shadow-lg border border-border/30 text-card-foreground">
-      <CardHeader className="p-0 mb-3 md:mb-4">
-        {/* Removed Title and Button Skeleton */}
-      </CardHeader>
-
       <CardContent className="p-0">
         <Tabs defaultValue="my-comments" className="w-full">
           <TabsList className="grid w-full grid-cols-2 mb-3 md:mb-4 h-auto bg-background/70 dark:bg-card/80 p-1 rounded-lg">

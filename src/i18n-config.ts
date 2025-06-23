@@ -93,3 +93,12 @@ export const localeDetailsMap: Record<Locale, LocaleDetails> = {
     timeFormat: 'HH:mm'
   }
 };
+
+export function getCurrencyByCountry(countryCode?: string): { currency: "BRL" | "EUR" | "USD", locale: string } {
+  if (!countryCode) return { currency: "USD", locale: "en" };
+  const southAmerica = ["BR", "AR", "BO", "CL", "CO", "EC", "GY", "PY", "PE", "SR", "UY", "VE"];
+  const europe = ["PT", "ES", "FR", "DE", "IT", "NL", "BE", "LU", "IE", "FI", "AT", "GR", "SI", "SK", "EE", "LV", "LT", "CY", "MT"];
+  if (southAmerica.includes(countryCode.toUpperCase())) return { currency: "BRL", locale: "pt-BR" };
+  if (europe.includes(countryCode.toUpperCase())) return { currency: "EUR", locale: "fr" };
+  return { currency: "USD", locale: "en" };
+}

@@ -1,4 +1,3 @@
-
 {
   "Metadata": {
     "title": "Projectude — Manage your projects practically, quickly, and efficiently.",
@@ -173,18 +172,254 @@
     "subtext": "Start for free. No credit card required."
   },
   "Footer": {
-    "tagline": "Modern project management for teams of all sizes.",
+    "tagline": "Modern platform for project management with real-time collaboration.",
     "navigation": "Navigation",
+    "home": "Home",
+    "about": "About",
+    "features": "Features",
+    "pricing": "Plans",
+    "faq": "FAQ",
     "legal": "Legal",
-    "contact": "Contact",
     "terms": "Terms of Service",
     "privacy": "Privacy Policy",
     "cookies": "Cookie Policy",
-    "helpCenterLink": "Help Center",
+    "contact": "Contact",
     "email": "help@projectude.com",
+    "helpCenterLink": "Help Center",
     "language": "Language",
-    "selectLanguage": "Select Language",
+    "selectLanguage": "Select language",
     "copyright": "© {year} Projectude. All rights reserved."
+  },
+  "CookiesPolicyPage": {
+    "title": "Projectude Cookie Policy",
+    "lastUpdate": "Last updated: April 30, 2025",
+    "intro": "This Cookie Policy explains how the Projectude Platform uses cookies and similar technologies to recognize you when you visit our website (www.projectude.com). It details what cookies are, why we use them, and how you can control them.",
+    "section1Title": "1. What are Cookies?",
+    "section1Text": "Cookies are small text files stored on your browser or device when you visit a website. They serve to recognize your preferences, improve your browsing experience, and collect analytical information.",
+    "section2Title": "2. Types of Cookies We Use",
+    "strictlyNecessaryTitle": "Strictly Necessary Cookies",
+    "strictlyNecessaryText": "These cookies are essential for the platform to function and cannot be disabled. They are used, for example, to:",
+    "strictlyNecessaryList": [
+      "Keep you logged into your account",
+      "Manage secure sessions",
+      "Save language or theme preferences (light/dark)"
+    ],
+    "performanceTitle": "Performance and Analytics Cookies",
+    "performanceText": "Help us understand how users interact with Projectude, allowing us to:",
+    "performanceList": [
+      "Measure number of visits and browsing behavior",
+      "Improve interface performance and usability"
+    ],
+    "performanceExample": "Example: we use tools like Google Analytics with IP anonymization.",
+    "functionalityTitle": "Functionality Cookies",
+    "functionalityText": "Allow the platform to remember your choices to personalize your experience, such as:",
+    "functionalityList": [
+      "Dark mode enabled",
+      "Saved filters in project listings",
+      "Display preferences on the dashboard"
+    ],
+    "marketingTitle": "Marketing Cookies (optional)",
+    "marketingText": "We may use cookies to:",
+    "marketingList": [
+      "Show personalized communications about updates or plans",
+      "Measure interactions with promotional campaigns (with your consent)"
+    ],
+    "section3Title": "3. Cookie Management",
+    "section3Text": "You can control and/or delete cookies at any time. To do so:",
+    "section3List": [
+      "Browser Settings: Adjust cookie permissions, block or delete saved cookies."
+    ],
+    "section4Title": "4. Third-Party Cookies",
+    "section4Text": "We may use cookies from third-party services (e.g., Stripe, Firebase, Google) for authentication, payments, or analytics. These cookies are subject to the respective privacy policies of these providers.",
+    "section5Title": "5. Changes to this Policy",
+    "section5Text": "This Cookie Policy may be modified periodically to reflect changes in legislation or the platform itself. The updated version will always be published at: www.projectude.com/cookies",
+    "section6Title": "6. Contact",
+    "section6Text": "If you have questions or requests regarding the use of cookies, contact our team:",
+    "contactList": [
+      "📧 Email: help@projectude.com"
+    ],
+    "consent": "By continuing to use Projectude after viewing the cookie notice, you agree to the use as described in this policy.",
+    "back": "Back to Home"
+  },
+  "HelpCenterPage": {
+    "title": "Help Center",
+    "description": "Find answers, tutorials, and information about the Projectude platform.",
+    "back": "Back to Home",
+    "faqTitle": "❓ Frequently Asked Questions (FAQ)",
+    "tutorialsTitle": "📘 Visual Tutorials (Step by Step)",
+    "searchPlaceholder": "Search for keywords... (Ex: create project, collaborator)",
+    "searchExample": "Example: create project, collaborator, dark mode, premium plan...",
+    "hashtagsTitle": "🏷️ Popular Hashtags",
+    "hashtagsDescription": "Click to open pop-ups with explanations and step-by-step instructions for each item:",
+    "noResultsFound": "No questions found for \"{query}\".",
+    "tutorialsDescription": "These tutorials will be displayed in pop-ups with illustrative icons and clear instructions.",
+    "documentsTitle": "📑 Important Documents",
+    "termsOfService": {
+      "title": "Terms of Service",
+      "description": "Platform usage rules, rights and duties, limits, plans and support.",
+      "readDocument": "Read document"
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "description": "Learn how your data is collected, used and protected (GDPR).",
+      "readDocument": "Read document"
+    },
+    "cookiesPolicy": {
+      "title": "Cookie Policy",
+      "description": "Discover which cookies we use, why and how you can control them.",
+      "readDocument": "Read document"
+    },
+    "contactTitle": "📬 Contact Support",
+    "contactDescription": "If you didn't find what you were looking for:",
+    "tipTitle": "💡 Tip:",
+    "tipDescription": "The Help Center can be accessed via the button at the top of the platform interface, next to the notifications button and dark mode.",
+    "faq": [
+      { "question": "How do I create a new project?", "answer": "Go to 'My Projects' > click 'Register New Project' > fill out the form with name, cover, status, collaborators, and notes." },
+      { "question": "How do I invite a collaborator?", "answer": "Go to the 'Collaborators' tab, click 'Invite Collaborator', and send the invitation by email." },
+      { "question": "Is it safe to enter credentials in the project?", "answer": "Yes. The data is encrypted and you can choose whether collaborators will have access or not." },
+      { "question": "How do I switch between light and dark mode?", "answer": "Click the sun or moon icon at the top of the interface to switch modes." },
+      { "question": "How does plan payment work?", "answer": "You can add and manage cards in the Settings > Plans tab. There is a payment history and an option to set a main card." },
+      { "question": "Can I attach files to a project?", "answer": "Yes. In the project registration or editing form, there is an option to add up to 3 attachments." }
+    ],
+    "tutorials": [
+      { "title": "How to add comments with status?", "steps": ["Go to the Comments tab.", "Click 'Add Comment'.", "Choose the project and collaborator.", "Write the comment and set the status.", "You can reply, edit, or archive later."] },
+      { "title": "How to use advanced filters?", "steps": ["Go to any project or comment list.", "Use the filters by tags, status, and date at the top.", "Combine multiple filters and refine your search with the search bar.", "Use the 'Clear Filters' button to reset."] }
+    ],
+    "hashtags": {
+      "CriarProjeto": { "title": "How to Create a New Project", "content": ["Go to 'My Projects' in the side menu.", "Click the 'Register New Project' button.", "Fill out the form with name, cover (optional), initial status.", "Add collaborators (optional).", "Save the project."] },
+      "CompartilharProjeto": { "title": "How to Share a Project", "content": ["Open the project you want to share.", "Go to the 'Collaborators' tab.", "Click 'Invite Collaborator'.", "Enter the collaborator's email and set permissions.", "Click 'Send Invitation'."] },
+      "ComentáriosETarefas": { "title": "Comments and Tasks", "content": ["In the 'Comments' tab, add new tasks or updates.", "Set the status (pending, in progress, etc.) for each comment.", "Reply to existing comments to keep communication flowing.", "Attach relevant files directly to comments."] },
+      "Colaboradores": { "title": "Collaborator Management", "content": ["Invite new members to your projects via email.", "Set specific permissions for each collaborator (view, edit, etc.).", "Remove collaborators when necessary.", "View the list of collaborators in each project."] },
+      "PlanosEPagamentos": { "title": "Plans and Payments", "content": ["Go to 'Settings > Plans' to manage your subscription.", "Add or remove credit cards.", "Set a main card for recurring charges.", "View your payment history.", "Upgrade or downgrade your plan at any time."] },
+      "Notificações": { "title": "Notification System", "content": ["Receive alerts about new comments, project updates, and invitations.", "Access the bell icon (🔔) in the header to see your notifications.", "Manage your notification preferences in 'Settings > Notifications' (coming soon)."] },
+      "AjudaVisual": { "title": "Visual Help (Tutorials)", "content": ["Explore step-by-step tutorials in this Help Center.", "Explanatory pop-ups for key features.", "Visual content to make learning easier."] },
+      "PerfilEConta": { "title": "Profile and Account", "content": ["Go to 'Settings > My Profile' to update your information.", "Change your name, profile picture, and bio information.", "Manage your password and security settings.", "Delete your account if necessary (irreversible action)."] },
+      "FiltrosAvançados": { "title": "Advanced Filters", "content": ["Use the search bar and filters (tags, status, date) in the listings.", "Combine multiple filters to refine results.", "Save frequently used filters (coming soon).", "Use the 'Clear Filters' button to reset the view."] }
+    }
+  },
+  "PrivacyPolicyPage": {
+    "title": "Projectude Platform Privacy Policy",
+    "lastUpdate": "Last updated: April 30, 2025",
+    "back": "Back to Home",
+    "intro": "Your privacy is important to us. This Privacy Policy describes how we collect, use, store, and protect your personal data when you use the Projectude platform, accessible at www.projectude.com.",
+    "section1Title": "1. Information We Collect",
+    "section1Intro": "When using Projectude, we may collect the following data:",
+    "section1_1Title": "1.1. Registration Data",
+    "section1_1Items": [
+      "Name",
+      "Email",
+      "Password (encrypted)",
+      "Profile picture",
+      "Professional and biographical information (optional)",
+      "Payment information (credit card)"
+    ],
+    "section1_2Title": "1.2. Usage Data",
+    "section1_2Items": [
+      "Actions performed on the platform (e.g., project creation, comments, invitations)",
+      "IP address, browser type and device",
+      "Date and time of access",
+      "Language preference and display mode (light/dark)"
+    ],
+    "section1_3Title": "1.3. Shared Data",
+    "section1_3Items": [
+      "Projects and credentials entered by users",
+      "Attached files (maximum 3 per project)",
+      "Collaborators added to projects"
+    ],
+    "section2Title": "2. Purpose of Data Use",
+    "section2Intro": "We use your data to:",
+    "section2Items": [
+      "Allow full platform functionality",
+      "Facilitate collaboration between users",
+      "Send notifications and updates",
+      "Process plan payments",
+      "Provide technical support",
+      "Improve user experience (internal analytics)"
+    ],
+    "section3Title": "3. Data Sharing",
+    "section3Intro": "Your data is not sold to third parties. We may share information:",
+    "section3Items": [
+      "With payment service providers (e.g., credit card gateways)",
+      "To comply with legal, judicial, or regulatory obligations",
+      "With authorized collaborators on projects you participate in"
+    ],
+    "section4Title": "4. Storage and Security",
+    "section4Intro": "We adopt technical and organizational measures to protect your data against unauthorized access, misuse, alteration, or destruction.",
+    "section4Items": [
+      "Storage on secure servers",
+      "Password encryption",
+      "Controlled access to data by technical team"
+    ],
+    "section5Title": "5. Data Retention",
+    "section5Text": "Your data will be maintained while your account is active or as long as necessary to fulfill the described purposes. You can request deletion of your account and data at any time.",
+    "section6Title": "6. Your Rights",
+    "section6Intro": "You have the right to:",
+    "section6Items": [
+      "Access the data we have about you",
+      "Correct inaccurate or outdated data",
+      "Request deletion of your data",
+      "Withdraw your consent, when applicable"
+    ],
+    "section6Contact": "Requests must be made via email:",
+    "section7Title": "7. Cookies",
+    "section7Intro": "We use cookies and similar technologies to:",
+    "section7Items": [
+      "Remember your preferences",
+      "Improve navigation",
+      "Conduct usage analytics"
+    ],
+    "section7Control": "You can control cookie usage in your browser settings.",
+    "section8Title": "8. Changes to this Policy",
+    "section8Text": "This policy may be updated periodically without prior notice. We recommend that you review this page regularly.",
+    "section9Title": "9. Contact",
+    "section9Intro": "If you have questions about this Privacy Policy, contact us:",
+    "section9Email": "📧 Email:",
+    "section9Website": "🌐 Website:",
+    "conclusion": "By using Projectude, you declare that you agree with this Privacy Policy."
+  },
+  "TermsOfServicePage": {
+    "title": "Projectude Platform Terms of Service",
+    "lastUpdate": "Last updated: April 30, 2025",
+    "back": "Back to Home",
+    "intro": "Welcome to Projectude! By accessing or using our platform (www.projectude.com), you agree to these Terms of Service (\"Terms\"), which govern the use of the project management system offered by Projectude. Please read them carefully.",
+    "section1Title": "1. Definitions",
+    "section1Items": [
+      { "term": "User", "definition": "Any individual or legal entity that creates an account on Projectude." },
+      { "term": "Project", "definition": "Set of information registered in the system, created or shared by users." },
+      { "term": "Collaborator", "definition": "User invited to contribute to one or more projects." },
+      { "term": "Service", "definition": "Features provided by the platform such as dashboards, comments, filters, among others." }
+    ],
+    "section2Title": "2. Platform Usage",
+    "section2Intro": "Projectude offers a modern and responsive environment for project management with the following features:",
+    "section2Features": [
+      "Creation, editing and sharing of projects.",
+      "Invitation and management of collaborators.",
+      "Comments assigned with status and responses.",
+      "Application of tags, filters and performance charts.",
+      "Dark/light mode, help center and notifications."
+    ],
+    "section2Warning": "Misuse of the platform, such as sending spam, fraudulent use of data, or any activity that compromises the security and stability of the service, will result in account suspension or deletion.",
+    "section3Title": "3. User Account",
+    "section3Text": "When registering, the user commits to providing true and updated information. Account use is personal and non-transferable. It is the user's responsibility to maintain the confidentiality of their credentials.",
+    "section4Title": "4. Plans and Payments",
+    "section4Text1": "Projectude may offer free and paid plans, whose prices, features and limitations will be clearly described in the \"Settings > Plans\" tab.",
+    "section4Text2": "Payments are processed via credit card, with viewing and history accessible to the user.",
+    "section4Text3": "Non-payment may result in account resource limitations.",
+    "section5Title": "5. Sharing and Collaboration",
+    "section5Text": "Users can share projects with other members through the \"Shared with me\" and \"Collaborators\" functionality. Each collaborator may have distinct permissions, defined by who created the project.",
+    "section6Title": "6. Comments and Archiving",
+    "section6Text": "All comments made within projects must be respectful and objective. Projectude is not responsible for opinions or content generated by users, but reserves the right to intervene in cases of violation of the rules.",
+    "section7Title": "7. Privacy and Data Protection",
+    "section7Text": "Projectude respects the privacy of its users. Registration data, projects and interactions will be treated according to our Privacy Policy, in compliance with the General Data Protection Law (GDPR).",
+    "section8Title": "8. Limitations of Liability",
+    "section8Text": "Projectude is not responsible for direct or indirect losses, service interruptions, data loss or misuse of the system by the user. Although we maintain good security practices, we do not guarantee uninterrupted or error-free operation.",
+    "section9Title": "9. Changes to Terms",
+    "section9Text": "We reserve the right to modify these Terms at any time without prior notice. Continued use of the platform after such changes constitutes acceptance of the new terms.",
+    "section10Title": "10. Support and Contact",
+    "section10Intro": "Questions or problems with the platform? Our team is ready to help:",
+    "section10Email": "📧 Support email:",
+    "section10Website": "🌐 Official website:",
+    "conclusion": "By using Projectude, you fully agree to these Terms of Service."
   }
 }
     

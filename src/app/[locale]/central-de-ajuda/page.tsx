@@ -38,6 +38,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Header } from '@/components/layout/header'; // Assuming Header is extracted
 import { Footer } from '@/components/layout/footer'; // Assuming Footer is extracted
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'; // Import Dialog components
+import { useTranslations } from "next-intl";
 
 // export const metadata: Metadata = { // Metadata export doesn't work in Client Components
 //     title: 'Central de Ajuda - Projectude',
@@ -197,26 +198,31 @@ const hashtagPopups = {
 
 
 export default function CentralDeAjudaPage() {
+    const t = useTranslations("HelpCenterPage");
     const [searchQuery, setSearchQuery] = useState('');
-    const [filteredFaqData, setFilteredFaqData] = useState(initialFaqData);
+    const [filteredFaqData, setFilteredFaqData] = useState(t.raw("faq"));
 
     // Effect to filter FAQ data based on search query
     useEffect(() => {
         const lowerCaseQuery = searchQuery.toLowerCase();
         if (lowerCaseQuery === '') {
-            setFilteredFaqData(initialFaqData);
+            setFilteredFaqData(t.raw("faq"));
         } else {
-            const filtered = initialFaqData.filter(item =>
+            const faqData = t.raw("faq");
+            const filtered = faqData.filter((item: any) =>
                 item.question.toLowerCase().includes(lowerCaseQuery) ||
                 item.answer.toLowerCase().includes(lowerCaseQuery)
             );
             setFilteredFaqData(filtered);
         }
-    }, [searchQuery]);
+    }, [searchQuery, t]);
 
     const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchQuery(event.target.value);
     };
+
+    const hashtagPopups = t.raw("hashtags");
+    const tutorialsData = t.raw("tutorials");
 
     return (
         <div className="flex flex-col min-h-screen bg-background text-foreground">
@@ -227,18 +233,17 @@ export default function CentralDeAjudaPage() {
                         <Button variant="outline" size="sm" asChild>
                             <Link href="/" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
                                 <ArrowLeft className="h-4 w-4" />
-                                Voltar para Home
+                                {t("back")}
                             </Link>
                         </Button>
                     </div>
 
                     <div className="text-center mb-12 md:mb-16">
-
                         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-primary">
-                            Central de Ajuda – Projectude
+                            {t("title")}
                         </h1>
                         <p className="mt-4 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-                            Tenha acesso rápido às informações, tutoriais e políticas da plataforma. Use a busca para encontrar respostas, clique nas hashtags para navegar por tópicos ou fale com nosso suporte.
+                            {t("description")}
                         </p>
                     </div>
 
@@ -248,23 +253,23 @@ export default function CentralDeAjudaPage() {
                             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                             <Input
                                 type="search"
-                                placeholder="Procure por palavras-chave... (Ex: criar projeto, colaborador)"
+                                placeholder={t("searchPlaceholder")}
                                 className="w-full pl-10 pr-4 py-2 text-base md:text-sm h-11 rounded-lg"
-                                value={searchQuery} // Bind value to state
-                                onChange={handleSearchChange} // Add onChange handler
+                                value={searchQuery}
+                                onChange={handleSearchChange}
                             />
                         </div>
                          <p className="text-xs text-muted-foreground mt-2 text-center">
-                            Exemplo: criar projeto, colaborador, modo escuro, plano premium...
+                            {t("searchExample")}
                          </p>
                     </div>
 
                     {/* Hashtags */}
                     <div className="mb-12 md:mb-16 text-center">
-                        <h2 className="text-xl font-semibold mb-4">🏷️ Hashtags Populares</h2>
-                         <p className="text-sm text-muted-foreground mb-6">Clique para abrir pop-ups com explicações e passo a passo de cada item:</p>
+                        <h2 className="text-xl font-semibold mb-4">{t("hashtagsTitle")}</h2>
+                         <p className="text-sm text-muted-foreground mb-6">{t("hashtagsDescription")}</p>
                          <div className="flex flex-wrap justify-center gap-2">
-                            {Object.entries(hashtagPopups).map(([tag, popupData]) => (
+                            {Object.entries(hashtagPopups).map(([tag, popupData]: [string, any]) => (
                                 <Dialog key={tag}>
                                     <DialogTrigger asChild>
                                     <Badge variant="secondary" className="cursor-pointer hover:bg-primary/20 text-xs sm:text-sm px-3 py-1">{tag}</Badge>
@@ -272,22 +277,20 @@ export default function CentralDeAjudaPage() {
                                     <DialogContent className="sm:max-w-[425px]">
                                     <DialogHeader>
                                         <DialogTitle className="flex items-center gap-2">
-                                        {popupData.icon && <popupData.icon className="h-5 w-5 text-primary" />}
                                         {popupData.title}
                                         </DialogTitle>
                                     </DialogHeader>
                                     <div className="py-4 text-sm text-muted-foreground space-y-2">
                                         {Array.isArray(popupData.content) ? (
                                         <ul className="list-decimal list-inside space-y-1">
-                                            {popupData.content.map((step, index) => (
+                                            {popupData.content.map((step: string, index: number) => (
                                             <li key={index}>{step}</li>
                                             ))}
                                         </ul>
                                         ) : (
-                                        <p>{popupData.content}</p> // Handle single string content if needed
+                                        <p>{popupData.content}</p>
                                         )}
                                     </div>
-                                    {/* Close button is included by default in DialogContent */}
                                     </DialogContent>
                                 </Dialog>
                             ))}
@@ -296,17 +299,15 @@ export default function CentralDeAjudaPage() {
 
                     {/* FAQ */}
                      <div className="mb-12 md:mb-16">
-                        <h2 className="text-xl font-semibold mb-6 text-center md:text-left">❓ Perguntas Frequentes (FAQ)</h2>
+                        <h2 className="text-xl font-semibold mb-6 text-center md:text-left">{t("faqTitle")}</h2>
                         {filteredFaqData.length > 0 ? (
                             <Accordion type="single" collapsible className="w-full space-y-3">
-                                {filteredFaqData.map((item, index) => (
+                                {filteredFaqData.map((item: any, index: number) => (
                                     <AccordionItem key={index} value={`item-${index + 1}`} className="border border-border/60 dark:border-border/40 rounded-lg bg-card shadow-sm">
                                         <AccordionTrigger className="flex justify-between items-center w-full py-3 px-4 md:py-4 md:px-6 text-left font-medium hover:no-underline text-sm md:text-base group">
                                             <span className="flex items-center gap-2 flex-1 pr-2">
-                                                {item.icon && <item.icon className="h-4 w-4 text-primary flex-shrink-0" />}
                                                 {item.question}
                                             </span>
-                                            {/* Chevron is now part of AccordionTrigger styling */}
                                         </AccordionTrigger>
                                         <AccordionContent className="pt-0 pb-3 px-4 md:pb-4 md:px-6 text-muted-foreground text-sm md:text-base text-left">
                                             {item.answer}
@@ -315,26 +316,25 @@ export default function CentralDeAjudaPage() {
                                 ))}
                             </Accordion>
                          ) : (
-                            <p className="text-center text-muted-foreground">Nenhuma pergunta encontrada para "{searchQuery}".</p>
+                            <p className="text-center text-muted-foreground">{t("noResultsFound", { query: searchQuery })}</p>
                          )}
                     </div>
 
                      {/* Visual Tutorials */}
                      <div className="mb-12 md:mb-16">
-                         <h2 className="text-xl font-semibold mb-6 text-center md:text-left">📘 Tutoriais Visuais (Passo a Passo)</h2>
-                         <p className="text-sm text-muted-foreground mb-6 text-center md:text-left">Estes tutoriais serão exibidos em pop-ups com ícones ilustrativos e instruções claras.</p>
+                         <h2 className="text-xl font-semibold mb-6 text-center md:text-left">{t("tutorialsTitle")}</h2>
+                         <p className="text-sm text-muted-foreground mb-6 text-center md:text-left">{t("tutorialsDescription")}</p>
                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            {tutorialsData.map((tutorial, index) => (
+                            {tutorialsData.map((tutorial: any, index: number) => (
                                 <Card key={index} className="bg-secondary/30 dark:bg-secondary/10">
                                     <CardHeader>
                                         <CardTitle className="flex items-center gap-2 text-base font-medium">
-                                            {tutorial.icon && <tutorial.icon className="h-4 w-4 text-primary" />}
                                             {tutorial.title}
                                         </CardTitle>
                                     </CardHeader>
                                     <CardContent>
                                         <ul className="list-decimal list-inside space-y-1 text-sm text-muted-foreground">
-                                             {tutorial.steps.map((step, stepIndex) => (
+                                             {tutorial.steps.map((step: string, stepIndex: number) => (
                                                  <li key={stepIndex}>{step}</li>
                                              ))}
                                         </ul>
@@ -346,55 +346,54 @@ export default function CentralDeAjudaPage() {
 
                     {/* Documents - Moved Here */}
                      <div className="mb-12 md:mb-16">
-                        <h2 className="text-xl font-semibold mb-6 text-center md:text-left">📑 Documentos Importantes</h2>
+                        <h2 className="text-xl font-semibold mb-6 text-center md:text-left">{t("documentsTitle")}</h2>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                             <Card className="hover:shadow-md transition-shadow">
                                 <CardHeader>
-                                    <CardTitle className="flex items-center gap-2 text-base font-medium"><FileText className="h-4 w-4 text-primary" /> Termos de Serviço</CardTitle>
+                                    <CardTitle className="flex items-center gap-2 text-base font-medium"><FileText className="h-4 w-4 text-primary" /> {t("termsOfService.title")}</CardTitle>
                                 </CardHeader>
                                 <CardContent className="text-xs text-muted-foreground">
-                                    Regras de uso da plataforma, direitos e deveres, limites, planos e suporte.
+                                    {t("termsOfService.description")}
                                 </CardContent>
                                 <CardFooter>
                                     <Button variant="link" size="sm" asChild className="p-0 h-auto text-primary">
-                                        <Link href="/termos-de-servico">Ler documento</Link>
+                                        <Link href="/termos-de-servico">{t("termsOfService.readDocument")}</Link>
                                     </Button>
                                 </CardFooter>
                             </Card>
                              <Card className="hover:shadow-md transition-shadow">
                                 <CardHeader>
-                                    <CardTitle className="flex items-center gap-2 text-base font-medium"><Lock className="h-4 w-4 text-primary" /> Política de Privacidade</CardTitle>
+                                    <CardTitle className="flex items-center gap-2 text-base font-medium"><Lock className="h-4 w-4 text-primary" /> {t("privacyPolicy.title")}</CardTitle>
                                 </CardHeader>
                                 <CardContent className="text-xs text-muted-foreground">
-                                    Saiba como seus dados são coletados, utilizados e protegidos (LGPD).
+                                    {t("privacyPolicy.description")}
                                 </CardContent>
                                  <CardFooter>
                                      <Button variant="link" size="sm" asChild className="p-0 h-auto text-primary">
-                                         <Link href="/politica-de-privacidade">Ler documento</Link>
+                                         <Link href="/politica-de-privacidade">{t("privacyPolicy.readDocument")}</Link>
                                      </Button>
                                  </CardFooter>
                             </Card>
                              <Card className="hover:shadow-md transition-shadow">
                                 <CardHeader>
-                                     <CardTitle className="flex items-center gap-2 text-base font-medium"><Cookie className="h-4 w-4 text-primary" /> Política de Cookies</CardTitle>
+                                     <CardTitle className="flex items-center gap-2 text-base font-medium"><Cookie className="h-4 w-4 text-primary" /> {t("cookiesPolicy.title")}</CardTitle>
                                 </CardHeader>
                                  <CardContent className="text-xs text-muted-foreground">
-                                    Descubra quais cookies usamos, por quê e como você pode controlá-los.
+                                    {t("cookiesPolicy.description")}
                                 </CardContent>
                                  <CardFooter>
                                      <Button variant="link" size="sm" asChild className="p-0 h-auto text-primary">
-                                         <Link href="/politica-de-cookies">Ler documento</Link>
+                                         <Link href="/politica-de-cookies">{t("cookiesPolicy.readDocument")}</Link>
                                      </Button>
                                  </CardFooter>
                             </Card>
                         </div>
                     </div>
 
-
                     {/* Contact */}
                     <div className="mb-12 md:mb-16 text-center border-t border-border/50 pt-12">
-                        <h2 className="text-xl font-semibold mb-4">📬 Fale com o Suporte</h2>
-                        <p className="text-muted-foreground mb-6">Se você não encontrou o que procurava:</p>
+                        <h2 className="text-xl font-semibold mb-4">{t("contactTitle")}</h2>
+                        <p className="text-muted-foreground mb-6">{t("contactDescription")}</p>
                         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
                             <Button variant="outline" asChild>
                                 <a href="mailto:help@projectude.com" className="inline-flex items-center gap-2">
@@ -411,7 +410,7 @@ export default function CentralDeAjudaPage() {
 
                      {/* Tip */}
                      <div className="text-center text-sm text-muted-foreground bg-muted/30 dark:bg-secondary/20 p-4 rounded-lg">
-                        💡 <strong>Dica:</strong> A Central de Ajuda pode ser acessada pelo botão <HelpCircle className="inline-block h-4 w-4 mx-1" /> no topo da interface da plataforma, ao lado do botão de notificações e do modo escuro.
+                        {t("tipTitle")} <strong>{t("tipDescription")}</strong>
                      </div>
 
                 </div>
