@@ -27,9 +27,6 @@ export function ThemeToggle({ className = "", iconClassName = "" }: { className?
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
-          {t("light")}
-        </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("dark")}>
           {t("dark")}
         </DropdownMenuItem>

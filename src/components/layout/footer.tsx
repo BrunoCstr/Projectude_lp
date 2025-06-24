@@ -47,16 +47,16 @@ export function Footer() {
               {t("tagline")}
             </p>
             <div className="flex space-x-3 pt-2">
-              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Facebook">
+              <Link href="https://www.facebook.com/share/1EjT9RCTWh/?mibextid=wwXIfr" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Facebook">
                 <Facebook className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Twitter">
+              <Link href="https://www.threads.com/@projectude" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Twitter">
                 <Twitter className="h-5 w-5" />
               </Link>
               <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" aria-label="LinkedIn">
                 <Linkedin className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Instagram">
+              <Link href="https://www.instagram.com/projectude/" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Instagram">
                 <Instagram className="h-5 w-5" />
               </Link>
             </div>
