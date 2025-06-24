@@ -8,7 +8,6 @@ import {
     Globe, Facebook, Twitter, Linkedin, Instagram
 } from "lucide-react";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { locales } from "@/i18n-config";
 
@@ -34,14 +33,11 @@ export function Footer() {
         <div className="flex flex-col md:grid md:grid-cols-4 gap-8 text-left">
           <div className="space-y-4 md:col-span-1">
             <Link href="/" className="flex items-center gap-2">
-              <Image
-                src="/logo_projectude.png"
+              <img
+                src="/logo_dark_mode.png"
                 alt="Projectude Logo"
-                width={28}
-                height={28}
-                className="h-6 w-6 md:h-7 md:w-7"
+                className="h-8 w-auto md:h-10 md:w-auto max-h-8 md:max-h-10 object-contain"
               />
-              <span className="font-bold text-lg md:text-xl">Projectude</span>
             </Link>
             <p className="text-sm text-muted-foreground">
               {t("tagline")}

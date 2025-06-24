@@ -27,7 +27,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-16 max-w-7xl items-center px-4 md:px-6 overflow-x-hidden">
+      <div className="container mx-auto flex h-16 md:h-20 max-w-7xl items-center px-4 md:px-6 overflow-x-hidden">
         {/* Desktop & Mobile Logo */}
         <div className="mr-auto flex items-center md:mr-8 min-w-0">
           <img
@@ -35,7 +35,12 @@ export function Header() {
             width={24}
             height={24}
             alt="Logo Projectude"
-            className="h-6 w-6 md:h-8 md:w-8 transition-all duration-300"
+            className="h-6 w-6 md:h-8 md:w-8 transition-all duration-300 md:hidden"
+          />
+          <img
+            src="/logo_dark_mode.png"
+            alt="Logo Projectude"
+            className="h-8 w-auto md:h-12 md:w-auto max-h-8 md:max-h-12 transition-all duration-300 hidden md:block object-contain"
           />
         </div>
 
