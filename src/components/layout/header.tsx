@@ -31,10 +31,11 @@ export function Header() {
         {/* Desktop & Mobile Logo */}
         <div className="mr-auto flex items-center md:mr-4">
           <img
-            src="/logo_dark_mode.png"
-            width={150}
-            height={150}
-            alt="Logo teste"
+            src="/logo_projectude.png"
+            width={24}
+            height={24}
+            alt="Logo Projectude"
+            className="h-6 w-6 md:h-8 md:w-8 transition-all duration-300"
           />
         </div>
 
@@ -97,33 +98,27 @@ export function Header() {
           </nav>
 
           {/* Right Side Icons for Mobile */}
-          <div className="flex items-center space-x-1">
+          <div className="flex items-center space-x-0.5 gap-1">
             <Button
               variant="ghost"
               size="icon"
-              className="hover:bg-secondary hover:text-secondary-foreground cursor-pointer transition-all duration-700"
-              onClick={() =>
-                window.open("https://app.projectude.com", "_blank")
-              }
+              className="h-8 w-8 min-w-0 p-1 hover:bg-secondary hover:text-secondary-foreground cursor-pointer transition-all duration-700"
+              onClick={() => window.open("https://app.projectude.com", "_blank")}
             >
-              <LogIn className="h-5 w-5" />{" "}
-              {/* Adjusted icon size for mobile */}
+              <LogIn className="h-4 w-4" />
               <span className="sr-only">{t("login")}</span>
             </Button>
             <Button
               variant="outline"
               size="icon"
-              className="border-primary text-primary hover:bg-primary dark:hover:text-black hover:text-primary-foreground cursor-pointer transition-all duration-700"
-              onClick={() =>
-                window.open("https://app.projectude.com", "_blank")
-              }
+              className="h-8 w-8 min-w-0 p-1 border-primary text-primary hover:bg-primary dark:hover:text-black hover:text-primary-foreground cursor-pointer transition-all duration-700"
+              onClick={() => window.open("https://app.projectude.com", "_blank")}
             >
-              <UserRoundPlus className="h-5 w-5" />{" "}
-              {/* Adjusted icon size for mobile */}
+              <UserRoundPlus className="h-4 w-4" />
               <span className="sr-only">{t("signup")}</span>
             </Button>
-            <LanguageSelector />
-            <ThemeToggle />
+            <LanguageSelector buttonClassName="h-8 w-8 min-w-0 p-1" iconClassName="h-4 w-4" />
+            <ThemeToggle className="h-8 w-8 min-w-0 p-1" iconClassName="h-4 w-4" />
           </div>
         </div>
 
@@ -149,15 +144,15 @@ export function Header() {
             <span className="hidden md:inline">{t("signup")}</span>
             <span className="sr-only md:hidden">{t("signup")}</span>
           </Button>
-          <LanguageSelector />
-          <ThemeToggle />
+          <LanguageSelector buttonClassName="h-8 w-8 min-w-0 p-1" iconClassName="h-4 w-4" />
+          <ThemeToggle className="h-8 w-8 min-w-0 p-1" iconClassName="h-4 w-4" />
         </div>
       </div>
     </header>
   );
 }
 
-function LanguageSelector() {
+function LanguageSelector({ buttonClassName = "", iconClassName = "" } = {}) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -169,7 +164,7 @@ function LanguageSelector() {
   function changeLocale(newLocale: string) {
     // Remove o "/[locale]" atual do início da rota
     const segments = pathname.split("/");
-    segments[1] = newLocale; // substitui o locale (índice 0 é “”, 1 é locale)
+    segments[1] = newLocale; // substitui o locale (índice 0 é "", 1 é locale)
     const newPath = segments.join("/");
     router.push(newPath + search);
   }
@@ -180,9 +175,9 @@ function LanguageSelector() {
         <Button
           variant="outline"
           size="icon"
-          className="hover:bg-secondary hover:text-secondary-foreground"
+          className={`hover:bg-secondary hover:text-secondary-foreground ${buttonClassName}`}
         >
-          <Globe className="h-5 w-5" />
+          <Globe className={iconClassName || "h-5 w-5"} />
           <span className="sr-only">{t("selectLanguage")}</span>
         </Button>
       </DropdownMenuTrigger>
