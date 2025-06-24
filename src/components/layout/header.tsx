@@ -118,7 +118,6 @@ export function Header() {
               <span className="sr-only">{t("signup")}</span>
             </Button>
             <LanguageSelector buttonClassName="h-8 w-8 min-w-0 p-1" iconClassName="h-4 w-4" />
-            <ThemeToggle className="h-8 w-8 min-w-0 p-1" iconClassName="h-4 w-4" />
           </div>
         </div>
 
