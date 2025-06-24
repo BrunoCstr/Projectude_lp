@@ -19,6 +19,21 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Configuração para resolver problemas com framer-motion
+  experimental: {
+    optimizePackageImports: ['framer-motion'],
+  },
+  webpack: (config, { isServer }) => {
+    // Configuração para framer-motion
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+      };
+    }
+    
+    return config;
+  },
 };
 
 const withNextIntl = createNextIntlPlugin();
