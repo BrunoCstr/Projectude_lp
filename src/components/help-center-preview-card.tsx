@@ -1,9 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Badge } from "@/components/ui/badge";
-import { Search, ChevronDown } from "lucide-react"; // Import ChevronDown
+import { Search } from "lucide-react";
 
 export function HelpCenterPreviewCard() {
   return (
@@ -36,31 +35,38 @@ export function HelpCenterPreviewCard() {
           </div>
         </div>
 
-        {/* Accordion Simulation */}
-        <Accordion type="single" collapsible className="w-full space-y-1.5">
-          <AccordionItem value="item-1" className="bg-background dark:bg-card rounded-md border border-border/40 shadow-sm">
-            <AccordionTrigger className="py-1.5 sm:py-2 px-2.5 sm:px-3 text-[10px] sm:text-xs hover:no-underline justify-between">
+        {/* Static Cards (No Accordion) */}
+        <div className="w-full space-y-1.5">
+          <div className="bg-background dark:bg-card rounded-md border border-border/40 shadow-sm p-2.5 sm:p-3">
+            <div className="flex justify-between items-center">
               <Skeleton className="h-3 sm:h-3.5 w-3/4" />
-              {/* Removed redundant ChevronDown here */}
-            </AccordionTrigger>
-            <AccordionContent className="px-2.5 sm:px-3 pb-1.5 sm:pb-2">
+            </div>
+            <div className="mt-2">
               <Skeleton className="h-2.5 w-full mt-1" />
               <Skeleton className="h-2.5 w-5/6 mt-1" />
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-2" className="bg-background dark:bg-card rounded-md border border-border/40 shadow-sm">
-             <AccordionTrigger className="py-1.5 sm:py-2 px-2.5 sm:px-3 text-[10px] sm:text-xs hover:no-underline justify-between">
-               <Skeleton className="h-3 sm:h-3.5 w-2/3" />
-             </AccordionTrigger>
-            {/* Content not shown in preview image */}
-          </AccordionItem>
-           <AccordionItem value="item-3" className="bg-background dark:bg-card rounded-md border border-border/40 shadow-sm">
-             <AccordionTrigger className="py-1.5 sm:py-2 px-2.5 sm:px-3 text-[10px] sm:text-xs hover:no-underline justify-between">
-               <Skeleton className="h-3 sm:h-3.5 w-4/5" />
-             </AccordionTrigger>
-            {/* Content not shown in preview image */}
-          </AccordionItem>
-        </Accordion>
+            </div>
+          </div>
+          
+          <div className="bg-background dark:bg-card rounded-md border border-border/40 shadow-sm p-2.5 sm:p-3">
+            <div className="flex justify-between items-center">
+              <Skeleton className="h-3 sm:h-3.5 w-2/3" />
+            </div>
+            <div className="mt-2">
+              <Skeleton className="h-2.5 w-full mt-1" />
+              <Skeleton className="h-2.5 w-4/5 mt-1" />
+            </div>
+          </div>
+          
+          <div className="bg-background dark:bg-card rounded-md border border-border/40 shadow-sm p-2.5 sm:p-3">
+            <div className="flex justify-between items-center">
+              <Skeleton className="h-3 sm:h-3.5 w-4/5" />
+            </div>
+            <div className="mt-2">
+              <Skeleton className="h-2.5 w-full mt-1" />
+              <Skeleton className="h-2.5 w-3/4 mt-1" />
+            </div>
+          </div>
+        </div>
       </CardContent>
     </Card>
   );
