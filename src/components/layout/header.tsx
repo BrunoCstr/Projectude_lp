@@ -27,9 +27,9 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-16 max-w-7xl items-center px-4 md:px-6">
+      <div className="container mx-auto flex h-16 max-w-7xl items-center px-4 md:px-6 overflow-x-hidden">
         {/* Desktop & Mobile Logo */}
-        <div className="mr-auto flex items-center md:mr-4">
+        <div className="mr-auto flex items-center md:mr-8 min-w-0">
           <img
             src="/logo_projectude.png"
             width={24}
@@ -74,31 +74,31 @@ export function Header() {
         </nav>
 
         {/* Mobile Navigation Trigger */}
-        <div className="md:hidden flex items-center space-x-2 ml-auto">
+        <div className="md:hidden flex items-center space-x-2 ml-auto min-w-0 overflow-hidden">
           {/* Mobile Menu Links - Centered */}
-          <nav className="flex items-center gap-2 text-xs font-medium">
+          <nav className="flex items-center gap-2 text-xs font-medium min-w-0 overflow-hidden">
             <Link
               href="#hero"
-              className="text-foreground/60 transition-colors hover:text-foreground/80"
+              className="text-foreground/60 transition-colors hover:text-foreground/80 whitespace-nowrap"
             >
               {t("home")}
             </Link>
             <Link
               href="#pricing"
-              className="text-foreground/60 transition-colors hover:text-foreground/80"
+              className="text-foreground/60 transition-colors hover:text-foreground/80 whitespace-nowrap"
             >
               {t("pricing")}
             </Link>
             <Link
               href="#functionalities"
-              className="text-foreground/60 transition-colors hover:text-foreground/80"
+              className="text-foreground/60 transition-colors hover:text-foreground/80 whitespace-nowrap"
             >
               {t("features")}
             </Link>
           </nav>
 
           {/* Right Side Icons for Mobile */}
-          <div className="flex items-center space-x-0.5 gap-1">
+          <div className="flex items-center space-x-0.5 gap-1 flex-shrink-0">
             <Button
               variant="ghost"
               size="icon"

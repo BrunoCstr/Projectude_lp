@@ -123,10 +123,15 @@ export default function Home({ params }: HomePageProps) {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Progress bar */}
-      <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-primary origin-left z-50"
-        style={{ scaleX }}
-      />
+      <div className="fixed top-0 left-0 right-0 h-1 bg-secondary/20 z-50">
+        <motion.div
+          className="h-full bg-primary origin-center"
+          style={{ 
+            scaleX: scaleX,
+            transformOrigin: "center"
+          }}
+        />
+      </div>
       <Header />
       <main className="flex-1">
         <HeroSection />
