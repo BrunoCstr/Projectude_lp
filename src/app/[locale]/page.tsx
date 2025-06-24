@@ -217,7 +217,7 @@ function HeroSection() {
                 <Button
                   size="lg"
                   className="bg-primary text-primary-foreground hover:bg-primary/90 w-full sm:w-auto"
-                  onClick={() => window.open("https://www.app.projectude.com", "_blank")}
+                  onClick={() => window.open("https://app.projectude.com", "_blank")}
                 >
                   <Briefcase className="mr-2 h-5 w-5" />
                   {t("subscribePremium")}
@@ -232,7 +232,7 @@ function HeroSection() {
                   size="lg"
                   variant="outline"
                   className="hover:bg-secondary hover:text-secondary-foreground w-full sm:w-auto border-border"
-                  onClick={() => window.open("https://www.app.projectude.com", "_blank")}
+                  onClick={() => window.open("https://app.projectude.com", "_blank")}
                 >
                   <UserRoundPlus className="mr-2 h-5 w-5" />
                   {t("getStarted")}
@@ -247,7 +247,6 @@ function HeroSection() {
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
             whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
           >
             <ProjectPreviewCard />
           </motion.div>
@@ -293,7 +292,6 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut",
     },
   },
 };
@@ -581,7 +579,6 @@ function FunctionalitiesSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.2 + 0.4 }}
                 whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
               >
                 {" "}
                 {/* Removed mx-auto */}
@@ -838,7 +835,7 @@ function PricingSection({ priceLocale, currency }: PricingSectionProps) {
                         whileTap={{ scale: 0.95 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <Button className="w-full md:w-auto mt-auto bg-primary text-primary-foreground hover:bg-primary/90 text-sm md:text-base" onClick={() => window.open("https://www.app.projectude.com", "_blank")}>
+                        <Button className="w-full md:w-auto mt-auto bg-primary text-primary-foreground hover:bg-primary/90 text-sm md:text-base" onClick={() => window.open("https://app.projectude.com", "_blank")}>
                           <Zap className="mr-2 h-4 w-4" />
                           {t("subscribePremium")}{" "}
                           <ArrowRight className="ml-2 h-4 w-4" />
@@ -909,7 +906,7 @@ function PricingSection({ priceLocale, currency }: PricingSectionProps) {
                         whileTap={{ scale: 0.95 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <Button className="w-full md:w-auto mt-auto bg-primary text-primary-foreground hover:bg-primary/90 text-sm md:text-base" onClick={() => window.open("https://www.app.projectude.com", "_blank")}>
+                        <Button className="w-full md:w-auto mt-auto bg-primary text-primary-foreground hover:bg-primary/90 text-sm md:text-base" onClick={() => window.open("https://app.projectude.com", "_blank")}>
                           <Zap className="mr-2 h-4 w-4" />
                           {t("subscribePremium")}{" "}
                           <ArrowRight className="ml-2 h-4 w-4" />
@@ -977,7 +974,7 @@ function PricingSection({ priceLocale, currency }: PricingSectionProps) {
                         whileTap={{ scale: 0.95 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <Button className="w-full md:w-auto mt-auto bg-primary text-primary-foreground hover:bg-primary/90 text-sm md:text-base" onClick={() => window.open("https://www.app.projectude.com", "_blank")}>
+                        <Button className="w-full md:w-auto mt-auto bg-primary text-primary-foreground hover:bg-primary/90 text-sm md:text-base" onClick={() => window.open("https://app.projectude.com", "_blank")}>
                           <Zap className="mr-2 h-4 w-4" />
                           {t("subscribePremium")}{" "}
                           <ArrowRight className="ml-2 h-4 w-4" />
@@ -1071,7 +1068,6 @@ function TestimonialsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               whileHover={{ y: -10 }}
-              transition={{ duration: 0.3 }}
             >
               <Card className="h-full flex flex-col transition-shadow duration-300 hover:shadow-xl bg-card border-border/60 dark:border-border/40 p-4 sm:p-6">
                 <CardContent className="pt-0 flex-1 flex flex-col justify-between p-0">
@@ -1255,7 +1251,7 @@ function CtaSection() {
               <Button
                 size="lg"
                 className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-base md:text-lg py-2.5 md:py-3"
-                onClick={() => window.open("https://www.app.projectude.com", "_blank")}
+                onClick={() => window.open("https://app.projectude.com", "_blank")}
               >
                 <UserRoundPlus className="mr-2 h-5 w-5" />
                 {t("buttonText")} <ArrowRight className="ml-2 h-5 w-5" />
