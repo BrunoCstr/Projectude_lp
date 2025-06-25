@@ -101,7 +101,7 @@
     "freeSubDesc": "Acesso a todas as funcionalidades, exceto criar e gerenciar projetos.",
     "freeBenefit1": "Acesso à plataforma",
     "freeBenefit2": "Visualização de projetos (convidado)",
-    "freeBenefit3": "Criação e gerenciamento de projetos",
+    "freeBenefit3": "Anote até 3 Ideias",
     "freeBenefit4": "Relatórios básicos",
     "freeBenefit5": "Suporte comunitário",
     "freePrice": "Grátis",
@@ -115,6 +115,7 @@
     "premiumBenefit2": "Criação e gerenciamento ilimitados",
     "premiumBenefit3": "Relatórios avançados",
     "premiumBenefit4": "Suporte prioritário via e-mail",
+    "premiumBenefit5": "Anote ideias ilimitadas",
      "monthlyPrice": {
         "BRL": "3,90",
         "USD": "0.75",

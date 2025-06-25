@@ -105,7 +105,7 @@ function useScrollAnimation() {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.8, 0.6]);
-  
+
   return { y, opacity };
 }
 
@@ -126,9 +126,9 @@ export default function Home({ params }: HomePageProps) {
       <div className="fixed top-0 left-0 right-0 h-1 bg-secondary/20 z-50">
         <motion.div
           className="h-full bg-primary origin-center"
-          style={{ 
+          style={{
             scaleX: scaleX,
-            transformOrigin: "center"
+            transformOrigin: "center",
           }}
         />
       </div>
@@ -161,7 +161,7 @@ function HeroSection() {
         <div className="grid gap-6 md:gap-10 lg:grid-cols-[1fr_450px] lg:gap-12 xl:grid-cols-[1fr_550px] items-center">
           {" "}
           {/* Removed redundant mx-auto */}
-          <motion.div 
+          <motion.div
             className="flex flex-col justify-center space-y-4 md:space-y-6 text-left lg:text-left"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -169,13 +169,13 @@ function HeroSection() {
           >
             {" "}
             {/* Adjusted text alignment for mobile */}
-            <motion.div 
+            <motion.div
               className="space-y-2 md:space-y-3"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
-              <motion.h1 
+              <motion.h1
                 className="text-4xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl/none bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -185,7 +185,7 @@ function HeroSection() {
                 {/* Adjusted font size for mobile */}
                 {t("title")}
               </motion.h1>
-              <motion.p 
+              <motion.p
                 className="max-w-[600px] text-muted-foreground text-base md:text-xl mx-0"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -195,7 +195,7 @@ function HeroSection() {
                 {/* Adjusted text alignment for mobile */}
                 {t("description")}
               </motion.p>
-              <motion.p 
+              <motion.p
                 className="max-w-[600px] text-muted-foreground text-sm md:text-lg pt-2 mx-0"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -206,7 +206,7 @@ function HeroSection() {
                 {t("subDescription")}
               </motion.p>
             </motion.div>
-            <motion.div 
+            <motion.div
               className="flex flex-col gap-3 sm:flex-row justify-start"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -222,7 +222,9 @@ function HeroSection() {
                 <Button
                   size="lg"
                   className="bg-primary text-primary-foreground hover:bg-primary/90 w-full sm:w-auto"
-                  onClick={() => window.open("https://app.projectude.com", "_blank")}
+                  onClick={() =>
+                    window.open("https://app.projectude.com", "_blank")
+                  }
                 >
                   <Briefcase className="mr-2 h-5 w-5" />
                   {t("subscribePremium")}
@@ -237,7 +239,9 @@ function HeroSection() {
                   size="lg"
                   variant="outline"
                   className="hover:bg-secondary hover:text-secondary-foreground w-full sm:w-auto border-border"
-                  onClick={() => window.open("https://app.projectude.com", "_blank")}
+                  onClick={() =>
+                    window.open("https://app.projectude.com", "_blank")
+                  }
                 >
                   <UserRoundPlus className="mr-2 h-5 w-5" />
                   {t("getStarted")}
@@ -246,7 +250,7 @@ function HeroSection() {
             </motion.div>
           </motion.div>
           {/* ProjectPreviewCard */}
-          <motion.div 
+          <motion.div
             className="lg:order-last flex justify-center mt-8 lg:mt-0"
             initial={{ opacity: 0, x: 50, scale: 0.8 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -309,7 +313,7 @@ function FeaturesSection() {
       className="w-full py-12 md:py-20 lg:py-28 bg-background"
     >
       <div className="container mx-auto max-w-7xl px-4 md:px-6">
-        <motion.div 
+        <motion.div
           className="flex flex-col items-center justify-center space-y-4 text-center mb-8 md:mb-12 lg:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -317,7 +321,7 @@ function FeaturesSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="space-y-2 md:space-y-3">
-            <motion.div 
+            <motion.div
               className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary font-medium mb-2 md:mb-3"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -327,7 +331,7 @@ function FeaturesSection() {
               <Settings className="inline-block mr-1.5 h-4 w-4" />
               {t("mainFeatures")}
             </motion.div>
-            <motion.h2 
+            <motion.h2
               className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -336,7 +340,7 @@ function FeaturesSection() {
             >
               {t("title")}
             </motion.h2>
-            <motion.p 
+            <motion.p
               className="max-w-[900px] text-muted-foreground text-base md:text-lg lg:text-xl xl:text-xl/relaxed"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -347,7 +351,7 @@ function FeaturesSection() {
             </motion.p>
           </div>
         </motion.div>
-        <motion.div 
+        <motion.div
           className="grid max-w-sm gap-6 sm:max-w-4xl sm:grid-cols-2 md:gap-8 lg:max-w-none lg:grid-cols-3 mx-auto"
           variants={containerVariants}
           initial="hidden"
@@ -365,7 +369,7 @@ function FeaturesSection() {
             >
               <Card className="h-full transition-transform transform hover:-translate-y-2 hover:shadow-2xl border-border/60 flex flex-col bg-card p-4 sm:p-6">
                 <CardHeader className="flex flex-row items-center gap-3 md:gap-4 pb-3 md:pb-4 p-0">
-                  <motion.div 
+                  <motion.div
                     className="bg-primary/10 p-2 md:p-3 rounded-lg"
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.6 }}
@@ -452,14 +456,14 @@ function FunctionalitiesSection() {
       className="w-full py-12 md:py-20 lg:py-28 bg-secondary/30 dark:bg-secondary/10"
     >
       <div className="container mx-auto max-w-7xl px-4 md:px-6">
-        <motion.div 
+        <motion.div
           className="flex flex-col items-center justify-center space-y-4 text-center mb-8 md:mb-12 lg:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <motion.div 
+          <motion.div
             className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary font-medium mb-2 md:mb-3"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -469,7 +473,7 @@ function FunctionalitiesSection() {
             <Cog className="inline-block mr-1.5 h-4 w-4" />
             {t("howItWorks")}
           </motion.div>
-          <motion.h2 
+          <motion.h2
             className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -478,7 +482,7 @@ function FunctionalitiesSection() {
           >
             {t("title")}
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="max-w-[900px] text-muted-foreground text-base md:text-lg lg:text-xl xl:text-xl/relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -511,14 +515,14 @@ function FunctionalitiesSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.2 + 0.3 }}
               >
-                <motion.div 
+                <motion.div
                   className="flex items-center gap-3"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.2 + 0.5 }}
                 >
-                  <motion.div 
+                  <motion.div
                     className="bg-primary/10 p-2 rounded-md"
                     whileHover={{ rotate: 360, scale: 1.1 }}
                     transition={{ duration: 0.6 }}
@@ -529,7 +533,7 @@ function FunctionalitiesSection() {
                     {t(func.titleKey)}
                   </h3>
                 </motion.div>
-                <motion.p 
+                <motion.p
                   className="text-muted-foreground text-sm md:text-base lg:text-lg max-w-[600px]"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -539,7 +543,7 @@ function FunctionalitiesSection() {
                   {t(func.descriptionKey)}
                 </motion.p>{" "}
                 {/* Removed mx-0 */}
-                <motion.ul 
+                <motion.ul
                   className="grid gap-1.5 md:gap-2 text-sm text-muted-foreground list-none pt-1 md:pt-2 max-w-[600px]"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -549,13 +553,16 @@ function FunctionalitiesSection() {
                   {" "}
                   {/* Removed mx-0 */}
                   {func.benefitKeys.map((benefitKey, i) => (
-                    <motion.li 
-                      key={i} 
+                    <motion.li
+                      key={i}
                       className="flex items-start gap-2 text-left"
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: index * 0.2 + 1.1 + i * 0.1 }}
+                      transition={{
+                        duration: 0.4,
+                        delay: index * 0.2 + 1.1 + i * 0.1,
+                      }}
                     >
                       <Check className="text-primary w-4 h-4 flex-shrink-0 mt-1" />{" "}
                       <span>{t(benefitKey)}</span>
@@ -565,21 +572,18 @@ function FunctionalitiesSection() {
                 <motion.div
                   whileHover={{ x: 10 }}
                   transition={{ duration: 0.3 }}
-                >
-                  <Button
-                    variant="link"
-                    className="self-start px-0 text-primary hover:text-primary/80 mt-2"
-                  >
-                    {t("learnMore")} <ArrowRight className="ml-1 h-4 w-4" />
-                  </Button>
-                </motion.div>
+                ></motion.div>
               </motion.div>
               {/* Render the card component dynamically */}
               <motion.div
                 className={`w-full flex justify-center ${
                   index % 2 !== 0 ? "md:order-none" : "md:order-last"
                 }`}
-                initial={{ opacity: 0, x: index % 2 !== 0 ? -50 : 50, scale: 0.8 }}
+                initial={{
+                  opacity: 0,
+                  x: index % 2 !== 0 ? -50 : 50,
+                  scale: 0.8,
+                }}
                 whileInView={{ opacity: 1, x: 0, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: index * 0.2 + 0.4 }}
@@ -629,14 +633,14 @@ function PricingSection({ priceLocale, currency }: PricingSectionProps) {
       className="w-full py-12 md:py-20 lg:py-28 bg-background"
     >
       <div className="container mx-auto max-w-7xl px-4 md:px-6">
-        <motion.div 
+        <motion.div
           className="flex flex-col items-center justify-center space-y-4 text-center mb-8 md:mb-12 lg:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <motion.div 
+          <motion.div
             className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary font-medium mb-2 md:mb-3"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -646,7 +650,7 @@ function PricingSection({ priceLocale, currency }: PricingSectionProps) {
             <DollarSign className="inline-block mr-1.5 h-4 w-4" />
             {t("pricing")}
           </motion.div>
-          <motion.h2 
+          <motion.h2
             className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -655,7 +659,7 @@ function PricingSection({ priceLocale, currency }: PricingSectionProps) {
           >
             {t("title")}
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="max-w-[900px] text-muted-foreground text-base md:text-lg lg:text-xl xl:text-xl/relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -665,7 +669,7 @@ function PricingSection({ priceLocale, currency }: PricingSectionProps) {
             {t("description")}
           </motion.p>
         </motion.div>
-        <motion.div 
+        <motion.div
           className="mx-auto max-w-5xl"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -744,16 +748,8 @@ function PricingSection({ priceLocale, currency }: PricingSectionProps) {
                           {t("freeBenefit2")}
                         </li>
                         <li className="flex items-start gap-2">
-                          <Check className="text-muted-foreground w-4 h-4 flex-shrink-0 mt-0.5" />{" "}
+                          <Check className="text-primary w-4 h-4 flex-shrink-0 mt-0.5" />{" "}
                           {t("freeBenefit3")}
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <Check className="text-muted-foreground w-4 h-4 flex-shrink-0 mt-0.5" />{" "}
-                          {t("freeBenefit4")}
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <Check className="text-muted-foreground w-4 h-4 flex-shrink-0 mt-0.5" />{" "}
-                          {t("freeBenefit5")}
                         </li>
                       </ul>
                     </div>
@@ -823,6 +819,10 @@ function PricingSection({ priceLocale, currency }: PricingSectionProps) {
                           <Check className="text-primary w-4 h-4 flex-shrink-0 mt-0.5" />{" "}
                           {t("premiumBenefit4")}
                         </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="text-primary w-4 h-4 flex-shrink-0 mt-0.5" />{" "}
+                          {t("premiumBenefit5")}
+                        </li>
                       </ul>
                     </div>
                     <div className="flex flex-col items-center md:items-end justify-between space-y-3 md:space-y-4 w-full md:w-auto md:text-right pt-4 md:pt-0 border-t md:border-t-0 md:border-l border-primary/30 md:pl-6 lg:pl-8">
@@ -840,7 +840,12 @@ function PricingSection({ priceLocale, currency }: PricingSectionProps) {
                         whileTap={{ scale: 0.95 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <Button className="w-full md:w-auto mt-auto bg-primary text-primary-foreground hover:bg-primary/90 text-sm md:text-base" onClick={() => window.open("https://app.projectude.com", "_blank")}>
+                        <Button
+                          className="w-full md:w-auto mt-auto bg-primary text-primary-foreground hover:bg-primary/90 text-sm md:text-base"
+                          onClick={() =>
+                            window.open("https://app.projectude.com", "_blank")
+                          }
+                        >
                           <Zap className="mr-2 h-4 w-4" />
                           {t("subscribePremium")}{" "}
                           <ArrowRight className="ml-2 h-4 w-4" />
@@ -892,6 +897,10 @@ function PricingSection({ priceLocale, currency }: PricingSectionProps) {
                           <Check className="text-primary w-4 h-4 flex-shrink-0 mt-0.5" />{" "}
                           {t("premiumBenefit4")}
                         </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="text-primary w-4 h-4 flex-shrink-0 mt-0.5" />{" "}
+                          {t("premiumBenefit5")}
+                        </li>
                       </ul>
                     </div>
                     <div className="flex flex-col items-center md:items-end justify-between space-y-3 md:space-y-4 w-full md:w-auto md:text-right pt-4 md:pt-0 border-t md:border-t-0 md:border-l border-primary/30 md:pl-6 lg:pl-8">
@@ -911,7 +920,12 @@ function PricingSection({ priceLocale, currency }: PricingSectionProps) {
                         whileTap={{ scale: 0.95 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <Button className="w-full md:w-auto mt-auto bg-primary text-primary-foreground hover:bg-primary/90 text-sm md:text-base" onClick={() => window.open("https://app.projectude.com", "_blank")}>
+                        <Button
+                          className="w-full md:w-auto mt-auto bg-primary text-primary-foreground hover:bg-primary/90 text-sm md:text-base"
+                          onClick={() =>
+                            window.open("https://app.projectude.com", "_blank")
+                          }
+                        >
                           <Zap className="mr-2 h-4 w-4" />
                           {t("subscribePremium")}{" "}
                           <ArrowRight className="ml-2 h-4 w-4" />
@@ -960,6 +974,10 @@ function PricingSection({ priceLocale, currency }: PricingSectionProps) {
                           <Check className="text-primary w-4 h-4 flex-shrink-0 mt-0.5" />{" "}
                           {t("premiumBenefit4")}
                         </li>
+                        <li className="flex items-start gap-2">
+                          <Check className="text-primary w-4 h-4 flex-shrink-0 mt-0.5" />{" "}
+                          {t("premiumBenefit5")}
+                        </li>
                       </ul>
                     </div>
                     <div className="flex flex-col items-center md:items-end justify-between space-y-3 md:space-y-4 w-full md:w-auto md:text-right pt-4 md:pt-0 border-t md:border-t-0 md:border-l border-primary/30 md:pl-6 lg:pl-8">
@@ -979,7 +997,12 @@ function PricingSection({ priceLocale, currency }: PricingSectionProps) {
                         whileTap={{ scale: 0.95 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <Button className="w-full md:w-auto mt-auto bg-primary text-primary-foreground hover:bg-primary/90 text-sm md:text-base" onClick={() => window.open("https://app.projectude.com", "_blank")}>
+                        <Button
+                          className="w-full md:w-auto mt-auto bg-primary text-primary-foreground hover:bg-primary/90 text-sm md:text-base"
+                          onClick={() =>
+                            window.open("https://app.projectude.com", "_blank")
+                          }
+                        >
                           <Zap className="mr-2 h-4 w-4" />
                           {t("subscribePremium")}{" "}
                           <ArrowRight className="ml-2 h-4 w-4" />
@@ -1026,14 +1049,14 @@ function TestimonialsSection() {
       className="w-full py-12 md:py-20 lg:py-28 bg-secondary/30 dark:bg-secondary/10"
     >
       <div className="container mx-auto max-w-7xl px-4 md:px-6">
-        <motion.div 
+        <motion.div
           className="flex flex-col items-center justify-center space-y-4 text-center mb-8 md:mb-12 lg:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <motion.div 
+          <motion.div
             className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary font-medium mb-2 md:mb-3"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -1043,7 +1066,7 @@ function TestimonialsSection() {
             <Users className="inline-block mr-1.5 h-4 w-4" />
             {t("title")}
           </motion.div>
-          <motion.h2 
+          <motion.h2
             className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1052,7 +1075,7 @@ function TestimonialsSection() {
           >
             {t("subtitle")}
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="max-w-[900px] text-muted-foreground text-base md:text-lg lg:text-xl xl:text-xl/relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1121,14 +1144,14 @@ function FAQSection() {
       <div className="container mx-auto max-w-4xl px-4 md:px-6">
         {" "}
         {/* Adjusted max-width */}
-        <motion.div 
+        <motion.div
           className="flex flex-col items-center justify-center space-y-4 text-center mb-8 md:mb-12 lg:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <motion.div 
+          <motion.div
             className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary font-medium mb-2 md:mb-3"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -1138,7 +1161,7 @@ function FAQSection() {
             <CircleHelp className="inline-block mr-1.5 h-4 w-4" />
             {t("title")}
           </motion.div>
-          <motion.h2 
+          <motion.h2
             className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1147,7 +1170,7 @@ function FAQSection() {
           >
             {t("subtitle")}
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="max-w-[900px] text-muted-foreground text-base md:text-lg lg:text-xl xl:text-xl/relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1206,21 +1229,21 @@ function CtaSection() {
       <div className="container mx-auto max-w-3xl px-4 md:px-6">
         {" "}
         {/* Adjusted max-width */}
-        <motion.div 
+        <motion.div
           className="mx-auto grid items-center justify-center gap-4 md:gap-6 text-left md:text-center"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <motion.div 
+          <motion.div
             className="space-y-3 md:space-y-4"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <motion.h2 
+            <motion.h2
               className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl text-primary"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1229,7 +1252,7 @@ function CtaSection() {
             >
               {t("title")}
             </motion.h2>
-            <motion.p 
+            <motion.p
               className="mx-auto max-w-[600px] text-muted-foreground text-base md:text-lg lg:text-xl xl:text-xl/relaxed"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1239,7 +1262,7 @@ function CtaSection() {
               {t("description")}
             </motion.p>
           </motion.div>
-          <motion.div 
+          <motion.div
             className="mx-auto w-full max-w-sm space-y-2 md:mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1256,13 +1279,15 @@ function CtaSection() {
               <Button
                 size="lg"
                 className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-base md:text-lg py-2.5 md:py-3"
-                onClick={() => window.open("https://app.projectude.com", "_blank")}
+                onClick={() =>
+                  window.open("https://app.projectude.com", "_blank")
+                }
               >
                 <UserRoundPlus className="mr-2 h-5 w-5" />
                 {t("buttonText")} <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </motion.div>
-            <motion.p 
+            <motion.p
               className="text-xs text-muted-foreground text-center"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -1279,5 +1304,3 @@ function CtaSection() {
 }
 
 // Footer component moved to src/components/layout/footer.tsx
-
-
