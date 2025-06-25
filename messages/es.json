@@ -101,7 +101,7 @@
     "freeSubDesc": "Acceso a todas las funcionalidades, excepto crear y gestionar proyectos.",
     "freeBenefit1": "Acceso a la plataforma",
     "freeBenefit2": "Visualización de proyectos (invitado)",
-    "freeBenefit3": "Creación y gestión de proyectos",
+    "freeBenefit3": "Escribe hasta 3 ideas",
     "freeBenefit4": "Informes básicos",
     "freeBenefit5": "Soporte comunitario",
     "freePrice": "Gratis",
@@ -115,6 +115,7 @@
     "premiumBenefit2": "Creación y gestión ilimitadas",
     "premiumBenefit3": "Informes avanzados",
     "premiumBenefit4": "Soporte prioritario por correo electrónico",
+    "premiumBenefit5": "Anote ideas ilimitadas",
     "monthlyPrice": {
       "BRL": "3,90",
       "USD": "0,75",
@@ -223,27 +224,135 @@
     "tipTitle": "💡 Consejo:",
     "tipDescription": "El Centro de Ayuda se puede acceder mediante el botón en la parte superior de la interfaz de la plataforma, junto al botón de notificaciones y el modo oscuro.",
     "faq": [
-      { "question": "¿Cómo crear un nuevo proyecto?", "answer": "Ve a 'Mis Proyectos' > haz clic en 'Registrar Nuevo Proyecto' > completa el formulario con nombre, portada, estado, colaboradores y notas." },
-      { "question": "¿Cómo invitar a un colaborador?", "answer": "Ve a la pestaña 'Colaboradores', haz clic en 'Invitar Colaborador' y envía la invitación por correo electrónico." },
-      { "question": "¿Es seguro ingresar credenciales en el proyecto?", "answer": "Sí. Los datos están encriptados y puedes elegir si los colaboradores tendrán acceso o no." },
-      { "question": "¿Cómo alternar entre el modo claro y oscuro?", "answer": "Haz clic en el icono de sol o luna en la parte superior de la interfaz para alternar entre los modos." },
-      { "question": "¿Cómo funciona el pago del plan?", "answer": "Puedes agregar y administrar tarjetas en la pestaña Configuración > Planes. Hay un historial de pagos y una opción para definir la tarjeta principal." },
-      { "question": "¿Puedo adjuntar archivos a un proyecto?", "answer": "Sí. En el formulario de registro o edición del proyecto, hay una opción para agregar hasta 3 archivos adjuntos." }
+      {
+        "question": "¿Cómo crear un nuevo proyecto?",
+        "answer": "Ve a 'Mis Proyectos' > haz clic en 'Registrar Nuevo Proyecto' > completa el formulario con nombre, portada, estado, colaboradores y notas."
+      },
+      {
+        "question": "¿Cómo invitar a un colaborador?",
+        "answer": "Ve a la pestaña 'Colaboradores', haz clic en 'Invitar Colaborador' y envía la invitación por correo electrónico."
+      },
+      {
+        "question": "¿Es seguro ingresar credenciales en el proyecto?",
+        "answer": "Sí. Los datos están encriptados y puedes elegir si los colaboradores tendrán acceso o no."
+      },
+      {
+        "question": "¿Cómo alternar entre el modo claro y oscuro?",
+        "answer": "Haz clic en el icono de sol o luna en la parte superior de la interfaz para alternar entre los modos."
+      },
+      {
+        "question": "¿Cómo funciona el pago del plan?",
+        "answer": "Puedes agregar y administrar tarjetas en la pestaña Configuración > Planes. Hay un historial de pagos y una opción para definir la tarjeta principal."
+      },
+      {
+        "question": "¿Puedo adjuntar archivos a un proyecto?",
+        "answer": "Sí. En el formulario de registro o edición del proyecto, hay una opción para agregar hasta 3 archivos adjuntos."
+      }
     ],
     "tutorials": [
-      { "title": "¿Cómo agregar comentarios con estado?", "steps": ["Ve a la pestaña Comentarios.", "Haz clic en 'Agregar Comentario'.", "Elige el proyecto y el colaborador.", "Escribe el comentario y define el estado.", "Puedes responder, editar o archivar posteriormente."] },
-      { "title": "¿Cómo usar los filtros avanzados?", "steps": ["Ve a cualquier lista de proyectos o comentarios.", "Utiliza los filtros por etiquetas, estado y fecha en la parte superior.", "Combina múltiples filtros y refina tu búsqueda con la barra de búsqueda.", "Utiliza el botón 'Limpiar Filtros' para restablecer."] }
+      {
+        "title": "¿Cómo agregar comentarios con estado?",
+        "steps": [
+          "Ve a la pestaña Comentarios.",
+          "Haz clic en 'Agregar Comentario'.",
+          "Elige el proyecto y el colaborador.",
+          "Escribe el comentario y define el estado.",
+          "Puedes responder, editar o archivar posteriormente."
+        ]
+      },
+      {
+        "title": "¿Cómo usar los filtros avanzados?",
+        "steps": [
+          "Ve a cualquier lista de proyectos o comentarios.",
+          "Utiliza los filtros por etiquetas, estado y fecha en la parte superior.",
+          "Combina múltiples filtros y refina tu búsqueda con la barra de búsqueda.",
+          "Utiliza el botón 'Limpiar Filtros' para restablecer."
+        ]
+      }
     ],
     "hashtags": {
-      "CriarProjeto": { "title": "Cómo crear un nuevo proyecto", "content": ["Ve a 'Mis Proyectos' en el menú lateral.", "Haz clic en el botón 'Registrar Nuevo Proyecto'.", "Completa el formulario con nombre, portada (opcional), estado inicial.", "Agrega colaboradores (opcional).", "Guarda el proyecto."] },
-      "CompartilharProjeto": { "title": "Cómo compartir un proyecto", "content": ["Abre el proyecto que deseas compartir.", "Ve a la pestaña 'Colaboradores'.", "Haz clic en 'Invitar Colaborador'.", "Ingresa el correo electrónico del colaborador y define los permisos.", "Haz clic en 'Enviar Invitación'."] },
-      "ComentáriosETarefas": { "title": "Comentarios y tareas", "content": ["En la pestaña 'Comentarios', agrega nuevas tareas o actualizaciones.", "Define el estado (pendiente, en progreso, etc.) para cada comentario.", "Responde a los comentarios existentes para mantener la comunicación fluida.", "Adjunta archivos relevantes directamente en los comentarios."] },
-      "Colaboradores": { "title": "Gestión de colaboradores", "content": ["Invita a nuevos miembros a tus proyectos por correo electrónico.", "Define permisos específicos para cada colaborador (ver, editar, etc.).", "Elimina colaboradores cuando sea necesario.", "Visualiza la lista de colaboradores en cada proyecto."] },
-      "PlanosEPagamentos": { "title": "Planes y pagos", "content": ["Accede a 'Configuración > Planes' para gestionar tu suscripción.", "Agrega o elimina tarjetas de crédito.", "Define una tarjeta principal para los cargos recurrentes.", "Visualiza tu historial de pagos.", "Mejora o reduce tu plan en cualquier momento."] },
-      "Notificações": { "title": "Sistema de notificaciones", "content": ["Recibe alertas sobre nuevos comentarios, actualizaciones de proyectos e invitaciones.", "Accede al icono de campana (🔔) en el encabezado para ver tus notificaciones.", "Gestiona tus preferencias de notificación en 'Configuración > Notificaciones' (próximamente)."] },
-      "AjudaVisual": { "title": "Ayuda visual (tutoriales)", "content": ["Explora los tutoriales paso a paso en este Centro de Ayuda.", "Ventanas emergentes explicativas para funciones clave.", "Contenido visual para facilitar el aprendizaje."] },
-      "PerfilEConta": { "title": "Perfil y cuenta", "content": ["Accede a 'Configuración > Mi Perfil' para actualizar tu información.", "Cambia tu nombre, foto de perfil e información biográfica.", "Administra tu contraseña y configuraciones de seguridad.", "Elimina tu cuenta si es necesario (acción irreversible)."] },
-      "FiltrosAvançados": { "title": "Filtros avanzados", "content": ["Utiliza la barra de búsqueda y los filtros (etiquetas, estado, fecha) en los listados.", "Combina múltiples filtros para refinar los resultados.", "Guarda los filtros usados frecuentemente (próximamente).", "Utiliza el botón 'Limpiar Filtros' para restablecer la vista."] }
+      "CriarProjeto": {
+        "title": "Cómo crear un nuevo proyecto",
+        "content": [
+          "Ve a 'Mis Proyectos' en el menú lateral.",
+          "Haz clic en el botón 'Registrar Nuevo Proyecto'.",
+          "Completa el formulario con nombre, portada (opcional), estado inicial.",
+          "Agrega colaboradores (opcional).",
+          "Guarda el proyecto."
+        ]
+      },
+      "CompartilharProjeto": {
+        "title": "Cómo compartir un proyecto",
+        "content": [
+          "Abre el proyecto que deseas compartir.",
+          "Ve a la pestaña 'Colaboradores'.",
+          "Haz clic en 'Invitar Colaborador'.",
+          "Ingresa el correo electrónico del colaborador y define los permisos.",
+          "Haz clic en 'Enviar Invitación'."
+        ]
+      },
+      "ComentáriosETarefas": {
+        "title": "Comentarios y tareas",
+        "content": [
+          "En la pestaña 'Comentarios', agrega nuevas tareas o actualizaciones.",
+          "Define el estado (pendiente, en progreso, etc.) para cada comentario.",
+          "Responde a los comentarios existentes para mantener la comunicación fluida.",
+          "Adjunta archivos relevantes directamente en los comentarios."
+        ]
+      },
+      "Colaboradores": {
+        "title": "Gestión de colaboradores",
+        "content": [
+          "Invita a nuevos miembros a tus proyectos por correo electrónico.",
+          "Define permisos específicos para cada colaborador (ver, editar, etc.).",
+          "Elimina colaboradores cuando sea necesario.",
+          "Visualiza la lista de colaboradores en cada proyecto."
+        ]
+      },
+      "PlanosEPagamentos": {
+        "title": "Planes y pagos",
+        "content": [
+          "Accede a 'Configuración > Planes' para gestionar tu suscripción.",
+          "Agrega o elimina tarjetas de crédito.",
+          "Define una tarjeta principal para los cargos recurrentes.",
+          "Visualiza tu historial de pagos.",
+          "Mejora o reduce tu plan en cualquier momento."
+        ]
+      },
+      "Notificações": {
+        "title": "Sistema de notificaciones",
+        "content": [
+          "Recibe alertas sobre nuevos comentarios, actualizaciones de proyectos e invitaciones.",
+          "Accede al icono de campana (🔔) en el encabezado para ver tus notificaciones.",
+          "Gestiona tus preferencias de notificación en 'Configuración > Notificaciones' (próximamente)."
+        ]
+      },
+      "AjudaVisual": {
+        "title": "Ayuda visual (tutoriales)",
+        "content": [
+          "Explora los tutoriales paso a paso en este Centro de Ayuda.",
+          "Ventanas emergentes explicativas para funciones clave.",
+          "Contenido visual para facilitar el aprendizaje."
+        ]
+      },
+      "PerfilEConta": {
+        "title": "Perfil y cuenta",
+        "content": [
+          "Accede a 'Configuración > Mi Perfil' para actualizar tu información.",
+          "Cambia tu nombre, foto de perfil e información biográfica.",
+          "Administra tu contraseña y configuraciones de seguridad.",
+          "Elimina tu cuenta si es necesario (acción irreversible)."
+        ]
+      },
+      "FiltrosAvançados": {
+        "title": "Filtros avanzados",
+        "content": [
+          "Utiliza la barra de búsqueda y los filtros (etiquetas, estado, fecha) en los listados.",
+          "Combina múltiples filtros para refinar los resultados.",
+          "Guarda los filtros usados frecuentemente (próximamente).",
+          "Utiliza el botón 'Limpiar Filtros' para restablecer la vista."
+        ]
+      }
     }
   },
   "PrivacyPolicyPage": {
@@ -333,10 +442,22 @@
     "intro": "¡Bienvenido a Projectude! Al acceder o utilizar nuestra plataforma (www.projectude.com), aceptas estos Términos de Servicio (\"Términos\"), que rigen el uso del sistema de gestión de proyectos ofrecido por Projectude. Léelos con atención.",
     "section1Title": "1. Definiciones",
     "section1Items": [
-      { "term": "Usuario", "definition": "Cualquier persona física o jurídica que crea una cuenta en Projectude." },
-      { "term": "Proyecto", "definition": "Conjunto de información registrada en el sistema, creada o compartida por usuarios." },
-      { "term": "Colaborador", "definition": "Usuario invitado para contribuir en uno o más proyectos." },
-      { "term": "Servicio", "definition": "Funcionalidades proporcionadas por la plataforma como dashboards, comentarios, filtros, entre otros." }
+      {
+        "term": "Usuario",
+        "definition": "Cualquier persona física o jurídica que crea una cuenta en Projectude."
+      },
+      {
+        "term": "Proyecto",
+        "definition": "Conjunto de información registrada en el sistema, creada o compartida por usuarios."
+      },
+      {
+        "term": "Colaborador",
+        "definition": "Usuario invitado para contribuir en uno o más proyectos."
+      },
+      {
+        "term": "Servicio",
+        "definition": "Funcionalidades proporcionadas por la plataforma como dashboards, comentarios, filtros, entre otros."
+      }
     ],
     "section2Title": "2. Uso de la Plataforma",
     "section2Intro": "Projectude ofrece un entorno moderno y responsivo para la gestión de proyectos con las siguientes funcionalidades:",

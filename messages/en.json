@@ -101,7 +101,7 @@
     "freeSubDesc": "Access to all features, except creating and managing projects.",
     "freeBenefit1": "Platform access",
     "freeBenefit2": "Project viewing (as guest)",
-    "freeBenefit3": "Project creation and management",
+    "freeBenefit3": "Note down up to 3 Ideas",
     "freeBenefit4": "Basic reports",
     "freeBenefit5": "Community support",
     "freePrice": "Free",
@@ -115,6 +115,7 @@
     "premiumBenefit2": "Unlimited creation and management",
     "premiumBenefit3": "Advanced reports",
     "premiumBenefit4": "Priority email support",
+    "premiumBenefit5": "Write down unlimited ideas",
     "monthlyPrice": {
         "BRL": "3,90",
         "USD": "0.75",
